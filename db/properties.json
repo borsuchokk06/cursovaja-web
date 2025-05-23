@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Capital Hill Residence",
+    "location": "East London",
+    "price": "5527.00",
+    "image": "https://via.placeholder.com/400x250?text=Capital+Hill"
+  },
+  {
+    "title": "Picket Fence Realty",
+    "location": "East London",
+    "price": "6727.00",
+    "image": "https://via.placeholder.com/400x250?text=Picket+Fence"
+  },
+  {
+    "title": "Banyon Tree Realty",
+    "location": "East London",
+    "price": "4327.00",
+    "image": "https://via.placeholder.com/400x250?text=Banyon+Tree"
+  },
+  {
+    "title": "Corsair Real Estate",
+    "location": "East London",
+    "price": "4427.00",
+    "image": "https://via.placeholder.com/400x250?text=Corsair"
+  },
+  {
+    "title": "Sequoia Real Estate",
+    "location": "East London",
+    "price": "4527.00",
+    "image": "https://via.placeholder.com/400x250?text=Sequoia"
+  },
+  {
+    "title": "Strive Partners Realty",
+    "location": "East London",
+    "price": "5527.00",
+    "image": "https://via.placeholder.com/400x250?text=Strive+Partners"
+  }
+]
