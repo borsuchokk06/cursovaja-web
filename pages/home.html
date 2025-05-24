@@ -6,54 +6,302 @@
   <title>RubyHome Real Estate</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/burger-menu.css">
   <link rel="stylesheet" href="../css/home.css">
 </head>
 <body>
-  <header>
-    <div class="logo">RUBYHOME.COM</div>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Properties</a>
-      <a href="#">About us</a>
-      <a href="#">Blog</a>
-      <a href="#" class="btn">Contact us</a>
-    </nav>
-  </header>
+<header>
+  <div class="logo"><img src="../img/home-logo.png" alt="Logo"></div>
+  <nav class="desktop-nav">
+    <a href="#">Home</a>
+    <a href="#">Properties</a>
+    <a href="#">About us</a>
+    <a href="#">Blog</a>
+    <a href="#" class="btn">Contact us</a>
+  </nav>
+  <button class="burger-btn" aria-label="Menu">
+    <i class="fas fa-bars"></i>
+  </button>
+</header>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu">
+  <div class="mobile-menu__header">
+    <div class="logo">RUBYHOME</div>
+    <button class="mobile-menu__close" aria-label="Close menu">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="#">Home</a>
+    <a href="#">Properties</a>
+    <a href="#">About us</a>
+    <a href="#">Blog</a>
+    <a href="#" class="btn">Contact us</a>
+  </nav>
+</div>
+<div class="overlay"></div>
+
   <section class="hero">
     <div class="text">
       <h1>Find the perfect place to stay with your family</h1>
-      <p>Buying a home is a life-changing experience, so shouldn’t your real estate agent be a life changer.</p>
-      <div class="search-box">
-        <select><option>Location</option><option>Dhaka</option></select>
-        <select><option>Property type</option><option>Duplex</option></select>
-        <select><option>Price</option><option>$4000-$8000</option></select>
-        <button>Search</button>
+      <p>Buying a home is a life-changing experience, so shouldn't your real estate agent be a life changer.</p>
+      
+      <div class="search-tabs">
+        <div class="search-tab active">Buy</div>
+        <div class="search-tab">Rent</div>
+        <div class="search-tab">Sell</div>
       </div>
+      
+      <div class="search-fields">
+        <div class="search-field">
+          <label>Location</label>
+          <select>
+            <option>Dhaka</option>
+          </select>
+        </div>
+        <div class="search-field">
+          <label>Property type</label>
+          <select>
+            <option>Duplex</option>
+          </select>
+        </div>
+        <div class="search-field">
+          <label>Price</label>
+          <select>
+            <option>$4000-$8000</option>
+          </select>
+        </div>
+      </div>
+      
+      <button class="search-button">Q. Search</button>
     </div>
-    <img src="https://via.placeholder.com/300x400" alt="Building" />
+    
+    <img src="../img/home-section1.png" alt="Building">
   </section>
+
   <section class="partners">
     <h2>Our Partners</h2>
     <div>
-      <img src="https://via.placeholder.com/80x40?text=Biotech">
-      <img src="https://via.placeholder.com/80x40?text=Express">
-      <img src="https://via.placeholder.com/80x40?text=Smilehome">
-      <img src="https://via.placeholder.com/80x40?text=Connect">
-      <img src="https://via.placeholder.com/80x40?text=Homebuild">
+      <img src="../img/biotech.png" alt="biotech">
+      <img src="../img/express.png" alt="express">
+      <img src="../img/smilehome.png" alt="smilehome">
+      <img src="../img/connect.png" alt="connect">
+      <img src="../img/homebuild.png" alt="homebuild">
     </div>
   </section>
-  <section class="properties" id="properties"></section>
 
-  <section class="cta">
-    <h2>Get listed your home as a owner</h2>
-    <p>Here is a list of the greatest real estate company slogans of all-time.</p>
-    <input type="email" placeholder="Enter email address">
-    <button>Subscribe</button>
+    <section class="property-section">
+    <div class="properties" id="properties"></div>
   </section>
-  <footer class="footer">
-    <div class="logo">RUBYHOME.COM</div>
-    <small>Courtesy to popular kits for simply random text…</small>
+
+  <section class="featured">
+    <div class="featured-header">
+      <h2>Property Featured</h2>
+      <p>Real estate is a crowded field. But with the number of buyers purchasing homes through real estate agents and brokers growing there's plenty of</p>
+    </div>
+    
+    <div class="features-flexs">
+      <div class="features-flex">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>100% Security</h3>
+          <p>For many of us, buying a home is a dream and one not easily attainable.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-snowflake"></i>
+          </div>
+          <h3>Free air conditioner</h3>
+          <p>For many of us, buying a home is a dream and one not easily attainable.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-spa"></i>
+          </div>
+          <h3>Flower garden</h3>
+          <p>For many of us, buying a home is a dream and one not easily attainable.</p>
+        </div>
+      </div>
+
+      <img src="../img/home-property.png" alt="Building">
+
+      <div class="features-flex">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-truck-moving"></i>
+          </div>
+          <h3>Parkers & movers</h3>
+          <p>For many of us, buying a home is a dream and one not easily attainable.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-couch"></i>
+          </div>
+          <h3>Rental furniture</h3>
+          <p>For many of us, buying a home is a dream and one not easily attainable.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-swimming-pool"></i>
+          </div>
+          <h3>Swimming pool</h3>
+          <p>For many of us, buying a home is a dream and one not easily attainable.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">REVIEWS</span>
+        <h2 class="section-title-review">Our valuable customer says</h2>
+      </div>
+      
+      <div class="reviews-carousel">
+        <!-- Slide 1 -->
+        <div class="review-slide active">
+          <div class="review-card">
+            <div class="review-content">
+              <p class="review-text">A good real estate agent doesn't disappear once the closing is signed. Buying a bigger home doesn't necessarily mean spend more money. Been there. Done that. Sold. Bought. Bringing It All Together.</p>
+            </div>
+            <div class="review-author">
+              <img src="../img/review-justin.png" alt="Justin Lee">
+              <div>
+                <h3>Justin Lee</h3>
+                <p>Products Designer at Ito</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="review-card">
+            <div class="review-content">
+              <p class="review-text">Working with this agency was a game-changer for us. They found us the perfect home within our budget and made the whole process stress-free. Highly recommend their services!</p>
+            </div>
+            <div class="review-author">
+              <img src="../img/review-angel.png" alt="Sarah Johnson">
+              <div>
+                <h3>Sarah Johnson</h3>
+                <p>Marketing Director at TechCorp</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Slide 2 -->
+        <div class="review-slide">
+          <div class="review-card">
+            <div class="review-content">
+              <p class="review-text">As first-time home buyers, we were nervous about the process. Our agent guided us every step of the way and negotiated an amazing deal. Couldn't be happier with our new home!</p>
+            </div>
+            <div class="review-author">
+              <img src="../img/review-justin.png" alt="Michael Chen">
+              <div>
+                <h3>Michael Chen</h3>
+                <p>Software Engineer at NexGen</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="review-card">
+            <div class="review-content">
+              <p class="review-text">The team's market knowledge is exceptional. They helped us sell our property above asking price in just two weeks. Professional, responsive, and truly care about their clients.</p>
+            </div>
+            <div class="review-author">
+              <img src="../img/review-angel.png" alt="Emily Rodriguez">
+              <div>
+                <h3>Emily Rodriguez</h3>
+                <p>Financial Analyst at BankPlus</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="carousel-controls">
+        <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
+        <div class="carousel-dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+        </div>
+        <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="cta-container">
+      <div class="cta-content">
+        <h2>Get listed your home as an owner</h2>
+        <p>Here is a list of the greatest real estate company slogans of all-time. These</p>
+        <div class="cta-form">
+          <input type="email" placeholder="Enter email address">
+          <button class="cta-button">Get Started <i class="fas fa-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="luxury-footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">RUBYHOME.COM</div>
+          <p class="footer-description">Contrary to popular is not simply random text. It has</p>
+          <div class="footer-rating">
+            <span><img src="../img/facebook.png" alt="Facebook"></span>
+            <span><img src="../img/inst.png" alt="Instagram"></span>
+            <span><img src="../img/twit.png" alt="Twitter"></span>
+            <span><img src="../img/youtube.png" alt="YouTube"></span>
+            <span><img src="../img/in.png" alt="LinkedIn"></span>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <div class="links-column">
+            <h3 class="links-title">About</h3>
+            <ul class="links-list">
+              <li><a href="#">Company</a></li>
+              <li><a href="#">Team</a></li>
+              <li><a href="#">Career</a></li>
+              <li><a href="#">Blogs</a></li>
+            </ul>
+          </div>
+          
+          <div class="links-column">
+            <h3 class="links-title">Products</h3>
+            <ul class="links-list">
+              <li><a href="#">E-Books</a></li>
+              <li><a href="#">Preasantation</a></li>
+              <li><a href="#">Management</a></li>
+              <li><a href="#">Dashboard</a></li>
+            </ul>
+          </div>
+          
+          <div class="links-column">
+            <h3 class="links-title">Address</h3>
+            <ul class="links-list">
+              <li><a href="#">Country Delivery</a></li>
+              <li><a href="#">Counter Beach Post</a></li>
+              <li><a href="#">www.itobd.com</a></li>
+              <li><a href="#">+880175585555</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </footer>
+
   <script src="../js/fetch/properies.js"></script>
+  <script src="../js/carousel/reviews-carousel.js"></script>
+  <script src="../js/burger-menu/burger-menu.js"></script>
 </body>
 </html>

@@ -1,18 +1,34 @@
-fetch('properties.json')
+fetch('../db/properties.json')
   .then(response => response.json())
-  .then(data => {
+  .then(properties => {
     const container = document.getElementById('properties');
-    data.forEach(prop => {
-      const card = document.createElement('div');
-      card.className = 'property-card';
-      card.innerHTML = `
-        <img src="${prop.image}" alt="House">
-        <div class="info">
-          <h4>${prop.title}</h4>
-          <small>${prop.location}</small>
-          <p>$${prop.price}</p>
-        </div>
-      `;
-      container.appendChild(card);
-    });
+    container.innerHTML = `
+      <h2 class="section-title">
+        <span class="highlight">Popular</span> Properties
+        <a class="view-all" href="#">View all</a>
+      </h2>
+      <div class="property-grid">
+        ${properties.map(p => `
+          <div class="property-card">
+            <img src="${p.image}" alt="${p.title}">
+            <div class="card-body">
+              <h3>${p.title}</h3>
+              <p class="location"><i class="fas fa-map-marker-alt"></i> ${p.location}</p>
+              <div class="features">
+                <span><i class="fas fa-bed"></i> ${p.beds}</span>
+                <span><i class="fas fa-bath"></i> ${p.baths}</span>
+                <span><i class="fas fa-car"></i> ${p.parking}</span>
+              </div>
+              <div class="card-footer">
+                <span class="price">$${p.price.toFixed(2)}</span>
+                <button class="btn-view">View Details</button>
+              </div>
+              <div class="like-icon">
+                <i class="${p.liked ? 'fas' : 'far'} fa-heart"></i>
+              </div>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    `;
   });
