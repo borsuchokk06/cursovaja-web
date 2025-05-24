@@ -1,0 +1,30 @@
+{
+  "users": [
+    {
+      "id": "0d0d"
+    },
+    {
+      "id": "71b5",
+      "email": "zxc@gmail.com",
+      "password": "Qwerty4450@",
+      "phone": "+375332352421",
+      "lastName": "Qwer",
+      "firstName": "QWerty",
+      "middleName": "",
+      "birthdate": "2000-12-12",
+      "username": "gentledog400"
+    },
+    {
+      "id": "b73c",
+      "email": "user@gmail.com",
+      "password": "*JQH6zP6pZUy",
+      "phone": "+375335252524",
+      "lastName": "User",
+      "firstName": "Wowuser",
+      "middleName": "",
+      "birthdate": "2005-05-05",
+      "username": "coolcat849",
+      "role": "user"
+    }
+  ]
+}
