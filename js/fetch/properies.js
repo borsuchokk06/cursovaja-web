@@ -1,7 +1,9 @@
-fetch('../db/properties.json')
+fetch('../../db.json') 
   .then(response => response.json())
-  .then(properties => {
+  .then(data => {
+    const properties = data.properties;  
     const container = document.getElementById('properties');
+
     container.innerHTML = `
       <h2 class="section-title">
         <span class="highlight">Popular</span> Properties
@@ -31,4 +33,7 @@ fetch('../db/properties.json')
         `).join('')}
       </div>
     `;
+  })
+  .catch(error => {
+    console.error('Ошибка загрузки данных:', error);
   });

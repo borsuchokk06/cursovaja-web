@@ -11,7 +11,6 @@ body {
   line-height: 1.6;
 }
 
-/* Hero Section */
 .hero {
   display: flex;
   justify-content: space-between;
@@ -131,7 +130,6 @@ body {
   width: auto;
 }
 
-/* Featured Section */
 .featured {
   padding: 4rem 5%;
   background: #f9f9f9;
@@ -205,7 +203,6 @@ body {
   font-size: 0.9rem;
 }
 
-/* Reviews Section */
 .reviews {
   padding: 4rem 5%;
   text-align: center;
@@ -336,7 +333,6 @@ body {
   background: #1E40AF;
 }
 
-/* CTA Section */
 .cta-section {
   padding: 4rem 5%;
   background-color: #1E3A8A;
@@ -513,7 +509,6 @@ body {
   color: red;
 }
 
-/* Media Queries */
 @media (max-width: 1024px) {
   .hero {
     flex-direction: column;
