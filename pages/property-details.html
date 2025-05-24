@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Property Details | Luxury Real Estate</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="../css/property-details.css">
+  <link rel="stylesheet" href="../css/burger-menu.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/footer.css">
+</head>
+<body>
+<header>
+  <div class="logo"><img src="../img/home-logo.png" alt="Logo"></div>
+  <nav class="desktop-nav">
+    <a href="home.html">Home</a>
+    <a href="properties.html">Properties</a>
+    <a href="about.html">About us</a>
+    <a href="#">Blog</a>
+    <a href="contact.html" class="btn">Contact us</a>
+    <a href="#" id="logoutBtn" style="display:none;">Выйти</a>
+    <a href="login.html" class="btn register-btn">Login</a>
+    <a href="register.html" class="btn register-btn">Register</a>
+  </nav>
+  <button class="burger-btn" aria-label="Menu">
+    <i class="fas fa-bars"></i>
+  </button>
+</header>
+
+<div class="mobile-menu">
+  <div class="mobile-menu__header">
+    <div class="logo">RUBYHOME</div>
+    <button class="mobile-menu__close" aria-label="Close menu">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="home.html">Home</a>
+    <a href="properties.html">Properties</a>
+    <a href="about.html">About us</a>
+    <a href="#">Blog</a>
+    <a href="contact.html" class="btn">Contact us</a>
+    <a href="#" id="logoutBtn" style="display:none;">Выйти</a>
+    <a href="login.html" class="btn register-btn">Login</a>
+    <a href="register.html" class="btn register-btn">Register</a>
+  </nav>
+</div>
+<div class="overlay"></div>
+  
+  <main class="property-details">
+    <div class="property-hero">
+      <div class="main-image">
+        <img id="main-property-image" src="" alt="Main property image">
+      </div>
+      <div class="thumbnail-gallery" id="thumbnail-gallery">
+        <!-- Thumbnails will be added by JavaScript -->
+      </div>
+    </div>
+    
+    <div class="property-content">
+      <div class="property-info">
+        <h1 id="property-title"></h1>
+        <p class="address" id="property-address"></p>
+        <p class="price" id="property-price"></p>
+        
+        <div class="quick-facts">
+          <div class="fact">
+            <i class="fas fa-bed"></i>
+            <span id="property-beds"></span> beds
+          </div>
+          <div class="fact">
+            <i class="fas fa-bath"></i>
+            <span id="property-baths"></span> baths
+          </div>
+          <div class="fact">
+            <i class="fas fa-car"></i>
+            <span id="property-parking"></span> parking
+          </div>
+          <div class="fact">
+            <i class="fas fa-ruler-combined"></i>
+            <span id="property-sqft"></span> sqft
+          </div>
+          <div class="fact">
+            <i class="fas fa-calendar-alt"></i>
+            Built <span id="property-year"></span>
+          </div>
+        </div>
+        
+        <div class="property-description">
+          <h2>About this home</h2>
+          <p id="property-description"></p>
+        </div>
+        
+        <div class="property-features">
+          <h2>Features</h2>
+          <ul id="property-features">
+            <!-- Features will be added by JavaScript -->
+          </ul>
+        </div>
+      </div>
+      
+      <div class="property-sidebar">
+        <div class="contact-agent">
+          <h3>Contact Agent</h3>
+          <div class="agent-info">
+            <img id="agent-photo" src="" alt="Agent photo">
+            <div>
+              <h4 id="agent-name"></h4>
+              <p id="agent-phone"></p>
+              <p id="agent-email"></p>
+            </div>
+          </div>
+          <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <input type="tel" placeholder="Your Phone">
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+        
+        <div class="schedule-tour">
+          <h3>Schedule a Tour</h3>
+          <form class="tour-form">
+            <input type="date" required>
+            <input type="time" required>
+            <button type="submit">Request Tour</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <footer class="luxury-footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">RUBYHOME.COM</div>
+          <p class="footer-description">Contrary to popular is not simply random text. It has</p>
+          <div class="footer-rating">
+            <span><img src="../img/facebook.png" alt="Facebook"></span>
+            <span><img src="../img/inst.png" alt="Instagram"></span>
+            <span><img src="../img/twit.png" alt="Twitter"></span>
+            <span><img src="../img/youtube.png" alt="YouTube"></span>
+            <span><img src="../img/in.png" alt="LinkedIn"></span>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <div class="links-column">
+            <h3 class="links-title">About</h3>
+            <ul class="links-list">
+              <li><a href="#">Company</a></li>
+              <li><a href="#">Team</a></li>
+              <li><a href="#">Career</a></li>
+              <li><a href="#">Blogs</a></li>
+            </ul>
+          </div>
+          
+          <div class="links-column">
+            <h3 class="links-title">Products</h3>
+            <ul class="links-list">
+              <li><a href="#">E-Books</a></li>
+              <li><a href="#">Preasantation</a></li>
+              <li><a href="#">Management</a></li>
+              <li><a href="#">Dashboard</a></li>
+            </ul>
+          </div>
+          
+          <div class="links-column">
+            <h3 class="links-title">Address</h3>
+            <ul class="links-list">
+              <li><a href="#">Country Delivery</a></li>
+              <li><a href="#">Counter Beach Post</a></li>
+              <li><a href="#">www.itobd.com</a></li>
+              <li><a href="#">+880175585555</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+  <script src="../js/burger-menu/burger-menu.js"></script>
+  <script src="../js/fetch/property-details.js"></script>
+  <script src="../js/users/user.js"></script>
+  <script src="../js/users/logout.js"></script>
+</body>
+</html>
