@@ -1,7 +1,6 @@
-fetch('../../db.json') 
+fetch('http://localhost:3000/properties')
   .then(response => response.json())
-  .then(data => {
-    const properties = data.properties;  
+  .then(properties => {
     const container = document.getElementById('properties');
 
     container.innerHTML = `

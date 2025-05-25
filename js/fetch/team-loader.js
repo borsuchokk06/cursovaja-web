@@ -1,37 +1,68 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const teamPreviewContainer = document.getElementById('teamContainer');
   const teamFullContainer = document.getElementById('fullTeamContainer');
-  const maxDisplay = 3;
+  const paginationContainer = document.getElementById('pagination');
+  const previewLimit = 3;
+  const perPage = 6;
+  let currentPage = 1;
+  let teamData = [];
 
-  fetch('../../db.json')
-    .then(response => response.json())
-    .then(data => {
-      const team = data.team; 
-      
+  fetch('http://localhost:3000/team')
+    .then(res => res.json())
+    .then(team => {
+      if (!Array.isArray(team)) throw new Error('Invalid team data format');
+      teamData = team;
+
       if (teamPreviewContainer) {
-        const previewMembers = team.slice(0, maxDisplay);
-        previewMembers.forEach(member => {
-          const memberHTML = createMemberHTML(member);
-          teamPreviewContainer.insertAdjacentHTML('beforeend', memberHTML);
+        const preview = team.slice(0, previewLimit);
+        preview.forEach(member => {
+          teamPreviewContainer.insertAdjacentHTML('beforeend', createMemberHTML(member));
         });
       }
 
       if (teamFullContainer) {
-        team.forEach(member => {
-          const memberHTML = createMemberHTML(member);
-          teamFullContainer.insertAdjacentHTML('beforeend', memberHTML);
-        });
+        renderTeamPage(currentPage);
+        renderPagination();
       }
     })
     .catch(error => {
       console.error('Error loading team data:', error);
-      if (teamPreviewContainer) {
-        teamPreviewContainer.innerHTML = '<p>Unable to load team members at this time.</p>';
-      }
-      if (teamFullContainer) {
-        teamFullContainer.innerHTML = '<p>Unable to load team members at this time.</p>';
-      }
+      const errorHTML = '<p>Unable to load team members at this time.</p>';
+      if (teamPreviewContainer) teamPreviewContainer.innerHTML = errorHTML;
+      if (teamFullContainer) teamFullContainer.innerHTML = errorHTML;
     });
+
+  function renderTeamPage(page) {
+    if (!teamFullContainer) return;
+
+    teamFullContainer.innerHTML = '';
+    const start = (page - 1) * perPage;
+    const end = start + perPage;
+    const membersToShow = teamData.slice(start, end);
+
+    membersToShow.forEach(member => {
+      teamFullContainer.insertAdjacentHTML('beforeend', createMemberHTML(member));
+    });
+  }
+
+  function renderPagination() {
+    if (!paginationContainer) return;
+
+    paginationContainer.innerHTML = '';
+    const totalPages = Math.ceil(teamData.length / perPage);
+
+    for (let i = 1; i <= totalPages; i++) {
+      const btn = document.createElement('button');
+      btn.textContent = i;
+      btn.className = (i === currentPage) ? 'active' : '';
+      btn.addEventListener('click', () => {
+        currentPage = i;
+        renderTeamPage(currentPage);
+        renderPagination();
+      });
+      paginationContainer.appendChild(btn);
+    }
+  }
 
   function createMemberHTML(member) {
     return `

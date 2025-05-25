@@ -48,3 +48,22 @@
 .view-all-btn i {
   margin-left: 8px;
 }
+
+.pagination {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  margin: 0 5px;
+  padding: 8px 12px;
+  background: #eee;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background: #333;
+  color: #fff;
+  border-color: #333;
+}

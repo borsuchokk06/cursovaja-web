@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="../css/burger-menu.css">
   <link rel="stylesheet" href="../css/header.css">
   <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/admin.css">
 </head>
 <body>
 <header>
@@ -18,7 +19,7 @@
     <a href="home.html">Home</a>
     <a href="properties.html">Properties</a>
     <a href="about.html">About us</a>
-    <a href="#">Blog</a>
+    <a href="blog.html" class="active">Blog</a>
     <a href="contact.html" class="btn">Contact us</a>
     <a href="#" id="logoutBtn" style="display:none;">Выйти</a>
     <a href="login.html" class="btn register-btn">Login</a>
@@ -40,7 +41,7 @@
     <a href="home.html">Home</a>
     <a href="properties.html">Properties</a>
     <a href="about.html">About us</a>
-    <a href="#">Blog</a>
+    <a href="blog.html" class="active">Blog</a>
     <a href="contact.html" class="btn">Contact us</a>
     <a href="#" id="logoutBtn" style="display:none;">Выйти</a>
     <a href="login.html" class="btn register-btn">Login</a>
@@ -64,6 +65,30 @@
       </ul>
     </nav>
   </section>
+
+  <div id="adminControls" style="position: fixed; bottom: 20px; right: 20px; display: none;">
+  <button id="addPropertyBtn" class="admin-btn" style="background: #4CAF50;">+ Add Property</button>
+  <button id="openDeleteListBtn" class="admin-btn" style="background: #f44336; margin-left: 10px;">- Delete Property</button>
+</div>
+
+<div id="addModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Add New Property</h2>
+    <form id="propertyForm">
+
+    </form>
+  </div>
+</div>
+
+<div id="deleteListModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Select Property to Delete</h2>
+    <div id="propertyDeleteList" class="delete-list"></div>
+  </div>
+</div>
+
 
   <footer class="luxury-footer">
     <div class="footer-container">
@@ -120,5 +145,6 @@
 <script src="../js/users/logout.js"></script>
 <script src="../js/users/user.js"></script>
 <script src="../js/burger-menu/burger-menu.js"></script>
+<script src="../js/admin-panel/properties-admin.js"></script>
 </body>
 </html>

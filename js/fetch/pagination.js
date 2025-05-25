@@ -6,34 +6,35 @@ document.addEventListener('DOMContentLoaded', function() {
   const propertiesContainer = document.getElementById('properties');
   const paginationContainer = document.getElementById('pagination');
 
-  // Показываем состояние загрузки
-  propertiesContainer.innerHTML = `
-    <div class="loading-state">
-      <div class="spinner"></div>
-      <p>Loading properties...</p>
-    </div>
-  `;
+propertiesContainer.innerHTML = `
+  <div class="loading-state">
+    <div class="spinner"></div>
+    <p>Loading properties...</p>
+  </div>
+`;
 
-  fetch('../db.json')
-    .then(response => {
-      if (!response.ok) throw new Error('Network response was not ok');
-      return response.json();
-    })
-    .then(data => {
-      allProperties = data.properties;
-      renderProperties(currentPage);
-      renderPagination();
-    })
-    .catch(error => {
-      console.error('Error loading properties:', error);
-      propertiesContainer.innerHTML = `
-        <div class="error-message">
-          <h3>Error Loading Properties</h3>
-          <p>${error.message}</p>
-          <button onclick="window.location.reload()">Try Again</button>
-        </div>
-      `;
-    });
+fetch('http://localhost:3000/properties')  
+  .then(response => {
+    if (!response.ok) throw new Error('Network response was not ok');
+    return response.json();
+  })
+  .then(properties => {
+    if (!Array.isArray(properties)) throw new Error('Invalid properties format');
+    allProperties = properties;
+    renderProperties(currentPage);
+    renderPagination();
+  })
+  .catch(error => {
+    console.error('Error loading properties:', error);
+    propertiesContainer.innerHTML = `
+      <div class="error-message">
+        <h3>Error Loading Properties</h3>
+        <p>${error.message}</p>
+        <button onclick="window.location.reload()">Try Again</button>
+      </div>
+    `;
+  });
+
 
   function setImageIfExists(imgElement, src) {
     if (!imgElement) return;
@@ -89,12 +90,10 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     `;
 
-    // Загружаем изображения с проверкой
     document.querySelectorAll('.property-image-container img').forEach(img => {
       setImageIfExists(img, img.getAttribute('data-src'));
     });
 
-    // Обработчики событий
     document.querySelectorAll('.btn-view').forEach(button => {
       button.addEventListener('click', function(e) {
         e.preventDefault();
@@ -118,49 +117,68 @@ document.addEventListener('DOMContentLoaded', function() {
     window.location.href = `property-details.html?id=${propertyId}`;
   }
 
-  function renderPagination() {
-    const pageCount = Math.ceil(allProperties.length / propertiesPerPage);
-    let paginationHTML = '';
-    
-    paginationHTML += `
-      <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
-        <a class="page-link" href="#" data-page="${currentPage - 1}">Previous</a>
-      </li>
-    `;
-    
-    for (let i = 1; i <= pageCount; i++) {
-      paginationHTML += `
-        <li class="page-item ${i === currentPage ? 'active' : ''}">
-          <a class="page-link" href="#" data-page="${i}">${i}</a>
-        </li>
-      `;
-    }
-    
-    paginationHTML += `
-      <li class="page-item ${currentPage === pageCount ? 'disabled' : ''}">
-        <a class="page-link" href="#" data-page="${currentPage + 1}">Next</a>
-      </li>
-    `;
-    
-    paginationContainer.innerHTML = paginationHTML;
-    
-    document.querySelectorAll('.page-link').forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const page = parseInt(this.getAttribute('data-page'));
-        if (page !== currentPage) {
-          currentPage = page;
-          renderProperties(currentPage);
-          renderPagination();
-          window.scrollTo({ top: propertiesContainer.offsetTop - 100, behavior: 'smooth' });
-        }
-      });
-    });
+function renderPagination() {
+  const pageCount = Math.ceil(allProperties.length / propertiesPerPage);
+  if (pageCount <= 1) {
+    paginationContainer.innerHTML = '';
+    return;
   }
+
+  let paginationHTML = '<div class="pagination-wrapper">';
+
+  paginationHTML += `
+    <button class="pagination-btn" ${currentPage === 1 ? 'disabled' : ''} data-page="${currentPage - 1}">
+      &laquo; Prev
+    </button>
+  `;
+
+  for (let i = 1; i <= pageCount; i++) {
+    paginationHTML += `
+      <button class="pagination-btn ${i === currentPage ? 'active' : ''}" data-page="${i}">
+        ${i}
+      </button>
+    `;
+  }
+
+  paginationHTML += `
+    <button class="pagination-btn" ${currentPage === pageCount ? 'disabled' : ''} data-page="${currentPage + 1}">
+      Next &raquo;
+    </button>
+  `;
+
+  paginationHTML += '</div>';
+  paginationContainer.innerHTML = paginationHTML;
+
+  document.querySelectorAll('.pagination-btn').forEach(btn => {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      const page = parseInt(this.getAttribute('data-page'));
+      if (page !== currentPage && page >= 1 && page <= pageCount) {
+        currentPage = page;
+        renderProperties(currentPage);
+        renderPagination();
+        window.scrollTo({ top: propertiesContainer.offsetTop - 100, behavior: 'smooth' });
+      }
+    });
+  });
+}
+
 
   const lastPage = sessionStorage.getItem('lastPropertiesPage');
   if (lastPage) {
     currentPage = parseInt(lastPage);
     sessionStorage.removeItem('lastPropertiesPage');
   }
+
+if (localStorage.getItem('admin') === 'true') {
+  document.getElementById('adminControls').style.display = 'block';
+
+  const logoutBtn = document.getElementById('logoutBtn');
+  logoutBtn.style.display = 'inline-block';
+  logoutBtn.textContent = 'Exit Admin';
+  logoutBtn.addEventListener('click', () => {
+    localStorage.removeItem('admin');
+    window.location.reload();
+  });
+}
 });

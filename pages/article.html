@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Property Details | Luxury Real Estate</title>
+  <title>Article | Luxury Real Estate</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link rel="stylesheet" href="../css/property-details.css">
-  <link rel="stylesheet" href="../css/burger-menu.css">
+  <link rel="stylesheet" href="../css/article.css">
+    <link rel="stylesheet" href="../css/burger-menu.css">
   <link rel="stylesheet" href="../css/header.css">
   <link rel="stylesheet" href="../css/footer.css">
 </head>
@@ -49,92 +49,51 @@
 </div>
 <div class="overlay"></div>
 
-<main class="property-details-container">
-  <section class="property-hero" id="propertyHero">
-    <div class="loading-state">
-      <div class="spinner"></div>
-      <p>Loading property details...</p>
+  <section class="article-header">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="blog.html">Blog</a> / <span>Article</span>
+      </div>
+      <h1 id="articleTitle"></h1>
+      <div class="article-meta">
+        <span id="articleDate"></span>
+        <span id="articleCategory"></span>
+      </div>
     </div>
   </section>
 
-  <section class="property-content">
+  <section class="article-container">
     <div class="container">
-      <div class="property-main">
-        <div class="property-header">
-          <h1 id="propertyTitle"></h1>
-          <p class="location" id="propertyLocation"></p>
-          <p class="address" id="propertyAddress"></p>
-          
-          <div class="property-meta">
-            <div class="meta-item">
-              <i class="fas fa-bed"></i>
-              <span id="propertyBeds"></span> beds
-            </div>
-            <div class="meta-item">
-              <i class="fas fa-bath"></i>
-              <span id="propertyBaths"></span> baths
-            </div>
-            <div class="meta-item">
-              <i class="fas fa-car"></i>
-              <span id="propertyParking"></span> parking
-            </div>
-            <div class="meta-item">
-              <i class="fas fa-ruler-combined"></i>
-              <span id="propertySqft"></span> sqft
-            </div>
-            <div class="meta-item">
-              <i class="fas fa-calendar-alt"></i>
-              Built in <span id="propertyYear"></span>
-            </div>
+      <article class="article-content">
+        <div class="article-image">
+          <img id="articleImage" src="" alt="">
+        </div>
+        <div id="articleText" class="article-text">
+
+        </div>
+      </article>
+
+      <aside class="article-sidebar">
+        <div class="sidebar-widget">
+          <h3>Categories</h3>
+          <ul class="categories-list">
+            <li><a href="#">Design</a></li>
+            <li><a href="#">Technology</a></li>
+            <li><a href="#">Lifestyle</a></li>
+            <li><a href="#">Investment</a></li>
+            <li><a href="#">Market</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-widget">
+          <h3>Recent Posts</h3>
+          <div class="recent-posts">
+
           </div>
-          
-          <div class="price-container">
-            <span class="price" id="propertyPrice"></span>
-            <button class="like-btn" id="likeBtn">
-              <i class="far fa-heart"></i>
-            </button>
-          </div>
-        </div>
-        
-        <div class="property-description">
-          <h2>Description</h2>
-          <p id="propertyDescription"></p>
-        </div>
-        
-        <div class="property-features">
-          <h2>Features</h2>
-          <ul class="features-list" id="propertyFeatures"></ul>
-        </div>
-        
-        <div class="property-gallery" id="propertyGallery">
-          <h2>Gallery</h2>
-          <div class="gallery-grid"></div>
-        </div>
-      </div>
-      
-      <aside class="property-sidebar">
-        <div class="agent-card">
-          <h3>Contact Agent</h3>
-          <div class="agent-info">
-            <img src="" alt="Agent photo" id="agentPhoto">
-            <div class="agent-details">
-              <h4 id="agentName"></h4>
-              <p id="agentPhone"></p>
-              <p id="agentEmail"></p>
-            </div>
-          </div>
-          <form class="contact-form">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <input type="tel" placeholder="Your Phone">
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit" class="btn">Send Message</button>
-          </form>
         </div>
       </aside>
     </div>
   </section>
-</main>
 
   <footer class="luxury-footer">
     <div class="footer-container">
@@ -187,7 +146,7 @@
     </div>
   </footer>
 
-<script src="../js/fetch/property-details.js"></script>
+  <script src="../js/fetch/article.js"></script>
 <script src="../js/users/logout.js"></script>
 <script src="../js/users/user.js"></script>
 <script src="../js/burger-menu/burger-menu.js"></script>
