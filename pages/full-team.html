@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../css/footer.css">
   <link rel="stylesheet" href="../css/team.css">
       <link rel="stylesheet" href="../css/admin.css">
+            <link rel="stylesheet" href="../css/team-controls.css">
 </head>
 <body>
 <header>
@@ -49,6 +50,36 @@
   </nav>
 </div>
 <div class="overlay"></div>
+
+<section class="team-controls">
+  <div class="container">
+    <div class="controls-grid">
+
+      <div class="control-group">
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="Search team members...">
+          <button id="searchBtn"><i class="fas fa-search"></i></button>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <select id="positionFilter">
+          <option value="">All Positions</option>
+
+        </select>
+      </div>
+
+      <div class="control-group">
+        <select id="sortBy">
+          <option value="name-asc">Name (A-Z)</option>
+          <option value="name-desc">Name (Z-A)</option>
+          <option value="position-asc">Position (A-Z)</option>
+          <option value="position-desc">Position (Z-A)</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</section>
 
   <section class="full-team-section">
     <div class="container">

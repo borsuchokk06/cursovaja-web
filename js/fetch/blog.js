@@ -1,9 +1,15 @@
 document.addEventListener('DOMContentLoaded', function () {
   const blogGrid = document.getElementById('blogGrid');
   const paginationContainer = document.getElementById('pagination');
+  const searchInput = document.getElementById('searchInput');
+  const searchBtn = document.getElementById('searchBtn');
+  const categoryFilter = document.getElementById('categoryFilter');
+  const sortBy = document.getElementById('sortBy');
+  
   const articlesPerPage = 9;
   let currentPage = 1;
   let blogArticles = [];
+  let filteredArticles = [];
 
   blogGrid.innerHTML = `
     <div class="loading-state">
@@ -19,6 +25,12 @@ document.addEventListener('DOMContentLoaded', function () {
     })
     .then(data => {
       blogArticles = data;
+      filteredArticles = [...blogArticles];
+      
+      // Initialize controls
+      initCategoryFilter();
+      initEventListeners();
+      
       renderArticles(currentPage);
       renderPagination();
     })
@@ -32,10 +44,86 @@ document.addEventListener('DOMContentLoaded', function () {
       `;
     });
 
+  function initCategoryFilter() {
+    // Get unique categories
+    const categories = [...new Set(blogArticles.map(article => article.category))];
+    
+    // Populate category filter
+    categories.forEach(category => {
+      const option = document.createElement('option');
+      option.value = category;
+      option.textContent = category;
+      categoryFilter.appendChild(option);
+    });
+  }
+
+  function initEventListeners() {
+    // Search functionality
+    searchBtn.addEventListener('click', applyFilters);
+    searchInput.addEventListener('keyup', (e) => {
+      if (e.key === 'Enter') applyFilters();
+    });
+    
+    // Filter and sort changes
+    categoryFilter.addEventListener('change', applyFilters);
+    sortBy.addEventListener('change', applyFilters);
+  }
+
+  function applyFilters() {
+    const searchTerm = searchInput.value.toLowerCase();
+    const selectedCategory = categoryFilter.value;
+    const sortValue = sortBy.value;
+    
+    // Apply filters
+    filteredArticles = blogArticles.filter(article => {
+      const matchesSearch = article.title.toLowerCase().includes(searchTerm) || 
+                          article.excerpt.toLowerCase().includes(searchTerm) ||
+                          article.content.toLowerCase().includes(searchTerm);
+      
+      const matchesCategory = !selectedCategory || article.category === selectedCategory;
+      
+      return matchesSearch && matchesCategory;
+    });
+    
+    // Apply sorting
+    sortArticles(sortValue);
+    
+    // Reset to first page
+    currentPage = 1;
+    renderArticles(currentPage);
+    renderPagination();
+  }
+
+  function sortArticles(sortValue) {
+    const [sortField, sortDirection] = sortValue.split('-');
+    
+    filteredArticles.sort((a, b) => {
+      let comparison = 0;
+      
+      if (sortField === 'date') {
+        comparison = new Date(a.date) - new Date(b.date);
+      } else if (sortField === 'title') {
+        comparison = a.title.localeCompare(b.title);
+      }
+      
+      return sortDirection === 'desc' ? -comparison : comparison;
+    });
+  }
+
   function renderArticles(page) {
     const startIndex = (page - 1) * articlesPerPage;
     const endIndex = startIndex + articlesPerPage;
-    const articlesToShow = blogArticles.slice(startIndex, endIndex);
+    const articlesToShow = filteredArticles.slice(startIndex, endIndex);
+
+    if (articlesToShow.length === 0) {
+      blogGrid.innerHTML = `
+        <div class="no-results">
+          <h3>No articles found</h3>
+          <p>Try adjusting your search or filters</p>
+        </div>
+      `;
+      return;
+    }
 
     blogGrid.innerHTML = articlesToShow.map(article => `
       <article class="blog-card">
@@ -53,11 +141,10 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function renderPagination() {
-    const totalPages = Math.ceil(blogArticles.length / articlesPerPage);
-    if (totalPages <= 1) {
-      paginationContainer.innerHTML = '';
-      return;
-    }
+    const totalPages = Math.ceil(filteredArticles.length / articlesPerPage);
+    paginationContainer.innerHTML = '';
+    
+    if (totalPages <= 1) return;
 
     let paginationHTML = '<div class="pagination-wrapper">';
 
@@ -91,7 +178,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if (page !== currentPage && page >= 1 && page <= totalPages) {
           currentPage = page;
           renderArticles(currentPage);
-          renderPagination();
           window.scrollTo({ top: blogGrid.offsetTop - 100, behavior: 'smooth' });
         }
       });

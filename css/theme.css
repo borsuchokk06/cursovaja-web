@@ -1,0 +1,39 @@
+body.dark-theme {
+  background: #2e2e2d;
+  color: #fff;
+}
+
+body.dark-theme .search-button{
+  background: #465eac;
+  color: #fff;
+}
+
+body.dark-theme .featured{
+  background: #f9f9f90a;
+  color: #fff;
+}
+
+body.dark-theme .feature-card{
+  background: #f9f9f948;
+  color: #fff;
+}
+
+body.dark-theme .review-card{
+  background: rgba(255, 255, 255, 0.212);
+  color: #fff;
+}
+
+body.dark-theme .cta-section{
+  background-color: #1e3b8a73;
+  color: #fff;
+}
+
+body.dark-theme header{
+  background: #2e2e2d;
+  color: #fff;
+}
+
+body.dark-theme .luxury-footer{
+  background: #2e2e2d;
+  color: #fff;
+}

@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../css/header.css">
   <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/admin.css">
+        <link rel="stylesheet" href="../css/controls-properties.css">
 </head>
 <body>
 <header>
@@ -54,6 +55,37 @@
     <h1>Our Luxury Properties</h1>
     <p>Discover our exclusive collection of high-end properties in the most desirable locations</p>
   </section>
+
+  <section class="property-controls">
+  <div class="container">
+    <div class="controls-grid">
+      <div class="control-group">
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="Search properties...">
+          <button id="searchBtn"><i class="fas fa-search"></i></button>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <select id="locationFilter">
+          <option value="">All Locations</option>
+
+        </select>
+      </div>
+
+      <div class="control-group">
+        <select id="sortBy">
+          <option value="price-desc">Price (High to Low)</option>
+          <option value="price-asc">Price (Low to High)</option>
+          <option value="beds-desc">Beds (Most)</option>
+          <option value="beds-asc">Beds (Fewest)</option>
+          <option value="date-desc">Newest</option>
+          <option value="date-asc">Oldest</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</section>
 
   <section class="property-section">
     <div class="properties" id="properties">

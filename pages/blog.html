@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../css/header.css">
   <link rel="stylesheet" href="../css/footer.css">
       <link rel="stylesheet" href="../css/admin.css">
+      <link rel="stylesheet" href="../css/controls.css">
 </head>
 <body>
 <header>
@@ -54,6 +55,35 @@
   <div class="container">
     <h1>Luxury Living Blog</h1>
     <p>Insights, trends and inspiration from the world of high-end real estate</p>
+  </div>
+</section>
+
+<section class="blog-controls">
+  <div class="container">
+    <div class="controls-grid">
+      <div class="control-group">
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="Search articles...">
+          <button id="searchBtn"><i class="fas fa-search"></i></button>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <select id="categoryFilter">
+          <option value="">All Categories</option>
+
+        </select>
+      </div>
+
+      <div class="control-group">
+        <select id="sortBy">
+          <option value="date-desc">Newest First</option>
+          <option value="date-asc">Oldest First</option>
+          <option value="title-asc">Title (A-Z)</option>
+          <option value="title-desc">Title (Z-A)</option>
+        </select>
+      </div>
+    </div>
   </div>
 </section>
 
