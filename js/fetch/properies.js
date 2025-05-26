@@ -10,7 +10,7 @@ fetch('http://localhost:3000/properties')
                 <span class="highlight" data-i18n="popular">Popular</span>
                 <p data-i18n="properties">Properties</p>
         </div>
-        <a class="view-all" href="properties.html" data-i18n="viewAll">View all</a>
+        <a class="view-all" href="properties.html" data-i18n="viewAll" id="noclick">View all</a>
       </div>
       <div class="property-grid">
         ${properties.map(p => `
@@ -26,7 +26,7 @@ fetch('http://localhost:3000/properties')
               </div>
               <div class="card-footer">
                 <span class="price">$${p.price.toFixed(2)}</span>
-                <button class="btn-view"><a href="properties.html" data-i18n="viewDetails">View Details</a></button>
+                <button class="btn-view"><a href="properties.html" data-i18n=" id="noclick"viewDetails">View Details</a></button>
               </div>
               <div class="like-icon">
                 <i class="${p.liked ? 'fas' : 'far'} fa-heart"></i>

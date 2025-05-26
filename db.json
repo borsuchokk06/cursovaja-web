@@ -174,7 +174,7 @@
         "name": "Emily Wilson",
         "phone": "+44 20 7987 6543",
         "email": "emily@luxuryestate.com",
-        "photo": "../img/agents/emily.jpg"
+        "photo": "../img/emily"
       }
     },
     {
@@ -336,14 +336,14 @@
       "name": "Emily Wilson",
       "position": "Marketing Director",
       "bio": "Emily crafts compelling narratives that showcase our properties in the best light.",
-      "image": "../img/team4.jpg"
+      "image": "../img/emily.jpg"
     },
     {
       "id": "5",
       "name": "Robert Kim",
       "position": "Senior Agent",
       "bio": "Robert's extensive network connects buyers with exclusive off-market properties.",
-      "image": "../img/team5.jpg"
+      "image": "../img/robert.jpg"
     }
   ]
 }

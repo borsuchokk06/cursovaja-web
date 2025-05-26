@@ -1,6 +1,6 @@
 .lang-switcher {
   position: absolute;
-  top: 100px;
+  top: 65px;
   right: 20px;
   z-index: 1000;
   display: flex;
