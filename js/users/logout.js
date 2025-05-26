@@ -1,5 +1,5 @@
 document.getElementById('logoutBtn').addEventListener('click', () => {
   localStorage.removeItem('currentUser');
 
-  window.location.href = '/cursovaja-web/pages/home.html';
+  window.location.href = '../pages/home.html';
 });
