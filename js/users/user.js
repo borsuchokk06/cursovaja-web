@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     button.addEventListener('click', (event) => {
       if (!currentUserRaw) {
         event.preventDefault(); 
-        window.location.href = '../../pages/login.html'; 
+        window.location.href = '/cursovaja-web/pages/login.html'; 
       }
     });
   });
