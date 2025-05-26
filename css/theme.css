@@ -1,0 +1,96 @@
+body.dark-theme {
+  background: #2e2e2d;
+  color: #fff;
+}
+
+body.dark-theme .search-button{
+  background: #465eac;
+  color: #fff;
+}
+
+body.dark-theme .btn,
+body.dark-theme .btn-view,
+body.dark-theme .view-all-btn,
+body.dark-theme .testimonials-section,
+body.dark-theme .cta-btn{
+  background: #465eac;
+  color: #fff;
+}
+
+body.dark-theme .featured,
+body.dark-theme .listing-header,
+body.dark-theme .property-controls,
+body.dark-theme .mission-description,
+body.dark-theme .team-controls,
+body.dark-theme .blog-controls,
+body.dark-theme .article-header{
+  background: #2e2e2d;
+  color: #fff;
+}
+
+body.dark-theme .feature-card,
+body.dark-theme .value-card,
+body.dark-theme .team-member,
+body.dark-theme .agent-card,
+body.dark-theme .mobile-menu{
+  background: #f9f9f948;
+  color: #fff;
+}
+
+body.dark-theme .review-card,
+body.dark-theme .about-cta,
+body.dark-theme .blog-card,
+body.dark-theme .sidebar-widget{
+  background: rgba(255, 255, 255, 0.212);
+  color: #fff;
+}
+
+body.dark-theme .cta-section{
+  background-color: #1e3b8a73;
+  color: #fff;
+}
+
+body.dark-theme header,
+body.dark-theme .values-section{
+  background: #2e2e2d;
+  color: #fff;
+}
+
+body.dark-theme nav a{
+  color: #fff;
+}
+
+body.dark-theme .luxury-footer{
+  background: #2e2e2d;
+  color: #fff;
+}
+
+body.dark-theme .lang-switcher{
+  background-color: #fff;
+  color: #2e2e2d;
+}
+
+body.dark-theme .card-body{
+  background: #2e2e2d;
+}
+
+body.dark-theme p,
+body.dark-theme label,
+body.dark-theme h2,
+body.dark-theme h1,
+body.dark-theme h3,
+body.dark-theme h4,
+body.dark-theme span,
+body.dark-theme a,
+body.dark-theme blockquote,
+body.dark-theme ul li{
+  color: #fff;
+}
+
+body.dark-theme .card-body .location,
+body.dark-theme .lead,
+body.dark-theme .stat-label,
+body.dark-theme .meta-item,
+body.dark-theme .features-list li{
+  color: #fff;
+}

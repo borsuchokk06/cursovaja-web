@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Регистрация | RubyHome</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/burger-menu.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/register.css">
+      <link rel="stylesheet" href="../css/theme.css">
+  <link rel="stylesheet" href="../css/visually.css">
+    <link rel="stylesheet" href="../css/lang-switcher.css">
+  <script src="../js/users/i18n.js" defer></script>
+</head>
+<body>
+<header>
+  <div class="logo"><img src="../img/home-logo.png" alt="Logo"></div>
+<nav class="desktop-nav">
+  <a href="home.html" data-i18n="home">Home</a>
+  <a href="properties.html" data-i18n="properties" id="noclick">Properties</a>
+  <a href="about.html" data-i18n="about" id="noclick">About us</a>
+  <a href="blog.html" class="active" data-i18n="blog" id="noclick">Blog</a>
+  <a href="contact.html" class="btn" data-i18n="contact" id="noclick">Contact us</a>
+</nav>
+  <button class="burger-btn" aria-label="Menu">
+    <i class="fas fa-bars"></i>
+  </button>
+</header>
+
+<div class="mobile-menu">
+  <div class="mobile-menu__header">
+    <div class="logo">RUBYHOME</div>
+    <button class="mobile-menu__close" aria-label="Close menu">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+<nav class="mobile-nav">
+  <a href="home.html" data-i18n="home">Home</a>
+  <a href="properties.html" data-i18n="properties" id="noclick">Properties</a>
+  <a href="about.html" data-i18n="about" id="noclick">About us</a>
+  <a href="blog.html" class="active" data-i18n="blog" id="noclick">Blog</a>
+  <a href="contact.html" class="btn" data-i18n="contact" id="noclick">Contact us</a>
+</nav>
+</div>
+<div class="overlay"></div>
+  <div class="register-container">
+    <div class="register-header">
+      <h1>Создать аккаунт</h1>
+      <p>Уже есть аккаунт? <a href="login.html">Войти</a></p>
+    </div>
+
+    <form id="registerForm">
+
+      <div class="form-group">
+        <label for="phone">Номер телефона (РБ) <span class="required">*</span></label>
+        <div class="input-with-prefix">
+          <span class="prefix">+375</span>
+          <input type="text" id="phone" name="phone" placeholder="29 1234567" maxlength="9" required>
+        </div>
+        <div class="error-message" id="phoneError"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email <span class="required">*</span></label>
+        <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+        <div class="error-message" id="emailError"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="birthdate">Дата рождения <span class="required">*</span></label>
+        <input type="date" id="birthdate" name="birthdate" required>
+        <div class="error-message" id="birthdateError"></div>
+      </div>
+
+      <div class="form-group">
+        <label>Пароль <span class="required">*</span></label>
+        <div class="password-options">
+          <label>
+            <input type="radio" name="passwordOption" value="auto" checked> Сгенерировать автоматически
+          </label>
+          <label>
+            <input type="radio" name="passwordOption" value="manual"> Ввести вручную
+          </label>
+        </div>
+
+        <div id="manualPasswordFields" style="display: none;">
+          <input type="password" id="password" name="password" placeholder="Введите пароль" minlength="8" maxlength="20">
+          <div class="password-strength">
+            <div class="strength-meter">
+              <div class="strength-bar"></div>
+            </div>
+            <div class="strength-text"></div>
+          </div>
+          <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Повторите пароль">
+          <div class="error-message" id="passwordError"></div>
+        </div>
+        <div id="autoPasswordField">
+          <input type="text" id="autoPassword" name="autoPassword" readonly>
+          <button type="button" id="generatePassword" class="secondary-btn">Сгенерировать новый</button>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">Фамилия <span class="required">*</span></label>
+        <input type="text" id="lastName" name="lastName" required>
+
+        <label for="firstName">Имя <span class="required">*</span></label>
+        <input type="text" id="firstName" name="firstName" required>
+
+        <label for="middleName">Отчество</label>
+        <input type="text" id="middleName" name="middleName">
+      </div>
+
+      <div class="form-group">
+        <label for="username">Никнейм <span class="required">*</span></label>
+        <div class="username-generator">
+          <input type="text" id="username" name="username" required>
+          <button type="button" id="generateUsername" class="secondary-btn">Сгенерировать</button>
+        </div>
+        <div class="error-message" id="usernameError"></div>
+        <div class="attempts-counter">Попыток осталось: <span id="attemptsLeft">5</span></div>
+      </div>
+
+      <div class="form-group agreement">
+        <label>
+          <input type="checkbox" id="agreement" name="agreement" required>
+          Я прочитал(а) и согласен(а) с <a href="#" target="_blank">Соглашением пользователя</a>
+          <span class="required">*</span>
+        </label>
+        <div class="error-message" id="agreementError"></div>
+      </div>
+
+      <button type="submit" id="registerBtn" class="primary-btn" disabled>Зарегистрироваться</button>
+    </form>
+  </div>
+
+  <footer class="luxury-footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+  <div class="logo"><img src="../img/home-logo.png" alt="Logo"></div>
+          <p class="footer-description" data-i18n="footerDesc">Contrary to popular is not simply random text. It has</p>
+          <div class="footer-rating">
+            <span><img src="../img/facebook.png" alt="Facebook"></span>
+            <span><img src="../img/inst.png" alt="Instagram"></span>
+            <span><img src="../img/twit.png" alt="Twitter"></span>
+            <span><img src="../img/youtube.png" alt="YouTube"></span>
+            <span><img src="../img/in.png" alt="LinkedIn"></span>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <div class="links-column">
+            <h3 class="links-title" data-i18n="aboutTitle">About</h3>
+            <ul class="links-list">
+              <li><a href="#" data-i18n="company">Company</a></li>
+              <li><a href="#" data-i18n="team">Team</a></li>
+              <li><a href="#" data-i18n="career">Career</a></li>
+              <li><a href="#" data-i18n="blogs">Blogs</a></li>
+            </ul>
+          </div>
+          
+          <div class="links-column">
+            <h3 class="links-title" data-i18n="productsTitle">Products</h3>
+            <ul class="links-list">
+              <li><a href="#" data-i18n="ebooks">E-Books</a></li>
+              <li><a href="#" data-i18n="presentation">Preasantation</a></li>
+              <li><a href="#" data-i18n="management">Management</a></li>
+              <li><a href="#" data-i18n="dashboard">Dashboard</a></li>
+            </ul>
+          </div>
+          
+          <div class="links-column">
+            <h3 class="links-title" data-i18n="addressTitle">Address</h3>
+            <ul class="links-list">
+              <li><a href="#" data-i18n="">Country Delivery</a></li>
+              <li><a href="#" data-i18n="">Counter Beach Post</a></li>
+              <li><a href="#" data-i18n="">www.itobd.com</a></li>
+              <li><a href="#" data-i18n="">+880175585555</a></li>
+            </ul>
+          </div>
+
+          <div class="links-column-buttons">
+            <h3 class="links-title" data-i18n="">Buttons</h3>
+            <div id="accessibility-dropdown">
+  <button onclick="toggleDropdown()" class="btn" data-i18n="accessibility">👁 Для слабовидящих</button>
+  <div id="accessibility-menu">
+    <h2 data-i18n="accessibilityMode">Accessibility</h2>
+
+    <div>
+      <strong data-i18n="fontSizeLabel">Font Size:</strong>
+      <button onclick="setFontSize('small')" data-i18n="fontSizeSmall">Small</button>
+      <button onclick="setFontSize('medium')" data-i18n="fontSizeMedium">Medium</button>
+      <button onclick="setFontSize('large')" data-i18n="fontSizeLarge">Large</button>
+    </div>
+
+    <div>
+      <strong data-i18n="colorSchemeLabel">Color Scheme:</strong>
+      <button onclick="setColorScheme('black-white')" data-i18n="colorSchemeMonochrome">Black/White</button>
+      <button onclick="setColorScheme('black-green')" data-i18n="colorSchemeGreen">Black/Green</button>
+      <button onclick="setColorScheme('white-black')" data-i18n="colorSchemeWhite">White/Black</button>
+      <button onclick="setColorScheme('beige-brown')" data-i18n="colorSchemeBeige">Beige/Brown</button>
+      <button onclick="setColorScheme('blue-darkblue')" data-i18n="colorSchemeBlue">Blue/Dark Blue</button>
+    </div>
+
+    <div>
+      <strong data-i18n="imagesToggle">Images:</strong>
+      <button onclick="toggleImages(true)" data-i18n="toggleOff">Disable</button>
+      <button onclick="toggleImages(false)" data-i18n="toggleOn">Enable</button>
+    </div>
+
+    <button onclick="resetAccessibility()" data-i18n="reset">🔄 Reset settings</button>
+  </div>
+</div>
+              <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme">
+  <i class="fas fa-moon"></i>
+</button>
+<button id="reset-settings" class="reset-button" data-i18n="reset">🔄 Reset settings</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+  <script src="../js/burger-menu/burger-menu.js"></script>
+    <script type="module" src="../js/register/register.js"></script>
+    <script src="../js/users/theme-toggle.js"></script>
+  <script src="../js/users/reset.js"></script>
+  <script src="../js/users/visually.js"></script>
+    <script src="../js/users/user.js"></script>
+</body>
+</html>

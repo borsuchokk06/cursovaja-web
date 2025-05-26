@@ -1,0 +1,166 @@
+    body.accessibility * {
+    font-family: Arial, sans-serif !important;
+    line-height: 1.8 !important;
+    letter-spacing: 0.12em !important;
+    word-spacing: 0.16em !important;
+    text-align: left !important;
+    }
+
+    body.accessibility h1,
+    body.accessibility h2,
+    body.accessibility h3,
+    body.accessibility h4,
+    body.accessibility p,
+    body.accessibility li,
+    body.accessibility a,
+    body.accessibility span {
+    font-family: Arial, sans-serif !important;
+    line-height: 1.8 !important;
+    letter-spacing: 0.12em !important;
+    word-spacing: 0.16em !important;
+    }
+
+    body.accessibility.font-small * {
+    font-size: 16px !important;
+    }
+
+    body.accessibility.font-medium * {
+    font-size: 20px !important;
+    }
+
+    body.accessibility.font-large * {
+    font-size: 24px !important;
+    }
+
+
+    .font-small { font-size: 16px; }
+    .font-medium { font-size: 20px; }
+    .font-large { font-size: 24px; }
+
+    .color-black-white   { background: #000; color: #fff; }
+    .color-black-green   { background: #000; color: #0f0; }
+    .color-white-black   { background: #fff; color: #000; }
+    .color-beige-brown   { background: #f5f5dc; color: #654321; }
+    .color-blue-darkblue { background: #add8e6; color: #00008b; }
+
+    body.accessibility.color-black-white header,
+    body.accessibility.color-black-white footer,
+    body.accessibility.color-black-white section,
+    body.accessibility.color-black-white .main,
+    body.accessibility.color-black-white .container,
+    body.accessibility.color-black-white .content,
+    body.accessibility.color-black-white .hero {
+    background: #000 !important;
+    color: #fff !important;
+    }
+
+    body.accessibility.color-black-green header,
+    body.accessibility.color-black-green footer,
+    body.accessibility.color-black-green section,
+    body.accessibility.color-black-green .main,
+    body.accessibility.color-black-green .container,
+    body.accessibility.color-black-green .content,
+    body.accessibility.color-black-green .hero {
+    background: #000 !important;
+    color: #0f0 !important;
+    }
+
+    body.accessibility.color-black-white header *,
+    body.accessibility.color-black-white footer *,
+    body.accessibility.color-black-white section *,
+    body.accessibility.color-black-white .main *,
+    body.accessibility.color-black-white .container *,
+    body.accessibility.color-black-white .content *,
+    body.accessibility.color-black-white .hero * {
+    color: #fff !important;
+    }
+
+    body.accessibility.color-white-black header,
+    body.accessibility.color-white-black footer,
+    body.accessibility.color-white-black section,
+    body.accessibility.color-white-black .main,
+    body.accessibility.color-white-black .container,
+    body.accessibility.color-white-black .content,
+    body.accessibility.color-white-black .hero {
+    background: #fff !important;
+    color: #000 !important;
+    }
+
+    body.accessibility.color-beige-brown header,
+    body.accessibility.color-beige-brown footer,
+    body.accessibility.color-beige-brown section,
+    body.accessibility.color-beige-brown .main,
+    body.accessibility.color-beige-brown .container,
+    body.accessibility.color-beige-brown .content,
+    body.accessibility.color-beige-brown .hero {
+    background: #f5f5dc !important;
+    color: #654321 !important;
+    }
+
+    body.accessibility.color-blue-darkblue header,
+    body.accessibility.color-blue-darkblue footer,
+    body.accessibility.color-blue-darkblue section,
+    body.accessibility.color-blue-darkblue .main,
+    body.accessibility.color-blue-darkblue .container,
+    body.accessibility.color-blue-darkblue .content,
+    body.accessibility.color-blue-darkblue .hero {
+    background: #add8e6 !important;
+    color: #00008b !important;
+    }
+
+
+    .image-placeholder {
+    display: block;
+    font-style: italic;
+    color: #888;
+    margin: 1rem 0;
+    }
+
+    .btn{
+          padding: 0.5rem 1rem;
+        background-color: #FE753F;
+        color: #fff;
+         border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+    }
+
+  #accessibility-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+    #accessibility-menu {
+    display: none;
+    position: absolute;
+    bottom: 100%; 
+    left: 0;
+    background-color: #fff;
+    color: #000;
+    min-width: 250px;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    margin-bottom: 0.5rem; 
+    }
+
+
+  #accessibility-dropdown.open #accessibility-menu {
+    display: block;
+  }
+
+  #accessibility-menu button {
+    display: block;
+    margin: 0.3rem 0;
+    width: 100%;
+    padding: 0.3rem;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  #accessibility-menu h2 {
+    font-size: 16px;
+    margin-top: 0;
+  }

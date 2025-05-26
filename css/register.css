@@ -1,0 +1,229 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: #fff;
+  color: #111;
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+header{
+    width: 100%;
+}
+
+.register-container {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.register-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.register-header h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #1E40AF;
+}
+
+.register-header p {
+  color: #666;
+}
+
+.register-header a {
+  color: #1E40AF;
+  text-decoration: none;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.required {
+  color: #e74c3c;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"] {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus {
+  border-color: #1E40AF;
+  outline: none;
+}
+
+.input-with-prefix {
+  display: flex;
+  align-items: center;
+}
+
+.prefix {
+  background: #f5f5f5;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-right: none;
+  border-radius: 5px 0 0 5px;
+}
+
+.input-with-prefix input {
+  border-radius: 0 5px 5px 0;
+}
+
+.password-options {
+  margin-bottom: 15px;
+}
+
+.password-options label {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.password-options input[type="radio"] {
+  margin-right: 8px;
+}
+
+.password-strength {
+  margin-top: 10px;
+}
+
+.strength-meter {
+  height: 5px;
+  background: #eee;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  overflow: hidden;
+}
+
+.strength-bar {
+  height: 100%;
+  width: 0;
+  background: #e74c3c;
+  transition: width 0.3s, background 0.3s;
+}
+
+.strength-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.username-generator {
+  display: flex;
+  gap: 10px;
+}
+
+.attempts-counter {
+  font-size: 12px;
+  color: #666;
+  margin-top: 5px;
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 14px;
+  margin-top: 5px;
+  display: none;
+}
+
+.agreement {
+  margin-top: 30px;
+}
+
+.agreement label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.agreement input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.agreement a {
+  color: #1E40AF;
+  text-decoration: none;
+}
+
+.primary-btn {
+  background: #1E40AF;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.3s;
+}
+
+.primary-btn:hover {
+  background: #153280;
+}
+
+.primary-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.secondary-btn {
+  background: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s;
+  white-space: nowrap;
+}
+
+.secondary-btn:hover {
+  background: #eee;
+}
+
+@media (max-width: 768px) {
+  .register-container {
+    padding: 20px;
+  }
+  
+  .username-generator {
+    flex-direction: column;
+  }
+  
+  .secondary-btn {
+    width: 100%;
+  }
+}

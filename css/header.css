@@ -1,0 +1,53 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3%;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 100;
+}
+
+.logo {
+  font-weight: 700;
+  color: crimson;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  max-height: 50px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #1E40AF;
+}
+
+nav .btn {
+  background: #1E40AF;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background 0.3s;
+    margin-left: 30px;
+}
+
+nav .btn:hover {
+  background: #153280;
+}
