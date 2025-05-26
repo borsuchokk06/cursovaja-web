@@ -3,7 +3,7 @@ let translations = {};
 
 async function loadTranslations() {
   try {
-    const response = await fetch('/cursovaja-web/js/users/translations.json');
+    const response = await fetch('../translations.json');
     translations = await response.json();
     applyTranslations();
   } catch (error) {
