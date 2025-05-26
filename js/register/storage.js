@@ -7,7 +7,7 @@ export async function registerUser(userData) {
     });
     if (!response.ok) throw new Error('Ошибка при регистрации');
     const user = await response.json();
-    window.location.href = '../../pages/home.html';
+    window.location.href = '/cursovaja-web/pages/home.html';
     return user; 
   } catch (error) {
     console.error('Ошибка:', error);
