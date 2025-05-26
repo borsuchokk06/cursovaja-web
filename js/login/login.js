@@ -29,7 +29,7 @@ loginForm.addEventListener('submit', async (e) => {
     if (user) {
       localStorage.setItem('currentUser', JSON.stringify(user));
       alert('Вход выполнен успешно!');
-      window.location.href = 'cursovaja-web/pages/login.html';
+      window.location.href = '/cursovaja-web/pages/login.html';
     } else {
       alert('Неверный email или пароль');
     }
