@@ -11,25 +11,22 @@
   <link rel="stylesheet" href="../css/header.css">
   <link rel="stylesheet" href="../css/footer.css">
   <link rel="stylesheet" href="../css/theme.css">
-
+  <link rel="stylesheet" href="../css/visually.css">
+  <link rel="stylesheet" href="../css/lang-switcher.css">
+  <script src="../js/users/i18n.js" defer></script>
 </head>
 <body>
 <header>
   <div class="logo"><img src="../img/home-logo.png" alt="Logo"></div>
 <nav class="desktop-nav">
-  <a href="home.html">Home</a>
-  <a href="properties.html">Properties</a>
-  <a href="about.html">About us</a>
-  <a href="blog.html" class="active">Blog</a>
-  <a href="contact.html" class="btn" >Contact us</a>
-  <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme">
-  <i class="fas fa-moon"></i>
-</button>
-<button id="reset-settings" class="reset-button">Сбросить настройки</button>
-
-  <a href="#" id="logoutBtn" style="display:none;">Logout</a>
-  <a href="login.html" class="btn register-btn">Login</a>
-  <a href="register.html" class="btn register-btn">Register</a>
+  <a href="home.html" data-i18n="home">Home</a>
+  <a href="properties.html" data-i18n="properties">Properties</a>
+  <a href="about.html" data-i18n="about">About us</a>
+  <a href="blog.html" class="active" data-i18n="blog">Blog</a>
+  <a href="contact.html" class="btn" data-i18n="contact">Contact us</a>
+  <a href="#" id="logoutBtn" style="display:none;" data-i18n="logout">Logout</a>
+  <a href="login.html" class="btn register-btn" data-i18n="login">Login</a>
+  <a href="register.html" class="btn register-btn" data-i18n="register">Register</a>
 </nav>
   <button class="burger-btn" aria-label="Menu">
     <i class="fas fa-bars"></i>
@@ -44,61 +41,58 @@
     </button>
   </div>
 <nav class="mobile-nav">
-  <a href="home.html">Home</a>
-  <a href="properties.html">Properties</a>
-  <a href="about.html">About us</a>
-  <a href="blog.html">Blog</a>
-  <a href="contact.html" class="btn">Contact us</a>
-  <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme">
-  <i class="fas fa-moon"></i>
-</button>
-  <a href="#" id="logoutBtn" style="display:none;">Logout</a>
-  <a href="login.html" class="btn register-btn">Login</a>
-  <a href="register.html" class="btn register-btn">Register</a>
+  <a href="home.html" data-i18n="home">Home</a>
+  <a href="properties.html" data-i18n="properties">Properties</a>
+  <a href="about.html" data-i18n="about">About us</a>
+  <a href="blog.html" data-i18n="blog">Blog</a>
+  <a href="contact.html" class="btn" data-i18n="contact">Contact us</a>
+  <a href="#" id="logoutBtn" style="display:none;" data-i18n="logout">Logout</a>
+  <a href="login.html" class="btn register-btn" data-i18n="login">Login</a>
+  <a href="register.html" class="btn register-btn" data-i18n="register">Register</a>
 </nav>
 </div>
 <div class="overlay"></div>
 
   <section class="hero">
     <div class="text">
-      <h1>Find the perfect place to stay with your family</h1>
-      <p>Buying a home is a life-changing experience, so shouldn't your real estate agent be a life changer.</p>
+      <h1 data-i18n="heroTitle">Find the perfect place to stay with your family</h1>
+      <p data-i18n="heroText">Buying a home is a life-changing experience, so shouldn't your real estate agent be a life changer.</p>
       
       <div class="search-tabs">
-        <div class="search-tab active">Buy</div>
-        <div class="search-tab">Rent</div>
-        <div class="search-tab">Sell</div>
+        <div class="search-tab active" data-i18n="buy">Buy</div>
+        <div class="search-tab" data-i18n="rent">Rent</div>
+        <div class="search-tab" data-i18n="sell">Sell</div>
       </div>
       
       <div class="search-fields">
         <div class="search-field">
-          <label>Location</label>
+          <label data-i18n="location">Location</label>
           <select>
-            <option>Dhaka</option>
+            <option data-i18n="dhaka">Dhaka</option>
           </select>
         </div>
         <div class="search-field">
-          <label>Property type</label>
+          <label data-i18n="propertyType">Property type</label>
           <select>
-            <option>Duplex</option>
+            <option data-i18n="duplex">Duplex</option>
           </select>
         </div>
         <div class="search-field">
-          <label>Price</label>
+          <label data-i18n="price">Price</label>
           <select>
             <option>$4000-$8000</option>
           </select>
         </div>
       </div>
       
-      <button class="search-button">Q. Search</button>
+      <button class="search-button" data-i18n="search">Q. Search</button>
     </div>
     
     <img src="../img/home-section1.png" alt="Building">
   </section>
 
   <section class="partners">
-    <h2>Our Partners</h2>
+    <h2 data-i18n="partners">Our Partners</h2>
     <div>
       <img src="../img/biotech.png" alt="biotech">
       <img src="../img/express.png" alt="express">
@@ -114,8 +108,8 @@
 
   <section class="featured">
     <div class="featured-header">
-      <h2>Property Featured</h2>
-      <p>Real estate is a crowded field. But with the number of buyers purchasing homes through real estate agents and brokers growing there's plenty of</p>
+      <h2 data-i18n="featuredTitle">Property Featured</h2>
+      <p data-i18n="featuredText">Real estate is a crowded field. But with the number of buyers purchasing homes through real estate agents and brokers growing there's plenty of</p>
     </div>
     
     <div class="features-flexs">
@@ -124,24 +118,24 @@
           <div class="feature-icon">
             <i class="fas fa-shield-alt"></i>
           </div>
-          <h3>100% Security</h3>
-          <p>For many of us, buying a home is a dream and one not easily attainable.</p>
+          <h3 data-i18n="security">100% Security</h3>
+          <p data-i18n="securityText">For many of us, buying a home is a dream and one not easily attainable.</p>
         </div>
         
         <div class="feature-card">
           <div class="feature-icon">
             <i class="fas fa-snowflake"></i>
           </div>
-          <h3>Free air conditioner</h3>
-          <p>For many of us, buying a home is a dream and one not easily attainable.</p>
+          <h3 data-i18n="ac">Free air conditioner</h3>
+          <p data-i18n="securityText">For many of us, buying a home is a dream and one not easily attainable.</p>
         </div>
         
         <div class="feature-card">
           <div class="feature-icon">
             <i class="fas fa-spa"></i>
           </div>
-          <h3>Flower garden</h3>
-          <p>For many of us, buying a home is a dream and one not easily attainable.</p>
+          <h3 data-i18n="garden">Flower garden</h3>
+          <p data-i18n="securityText">For many of us, buying a home is a dream and one not easily attainable.</p>
         </div>
       </div>
 
@@ -152,114 +146,167 @@
           <div class="feature-icon">
             <i class="fas fa-truck-moving"></i>
           </div>
-          <h3>Parkers & movers</h3>
-          <p>For many of us, buying a home is a dream and one not easily attainable.</p>
+          <h3 data-i18n="movers">Parkers & movers</h3>
+          <p data-i18n="securityText">For many of us, buying a home is a dream and one not easily attainable.</p>
         </div>
         
         <div class="feature-card">
           <div class="feature-icon">
             <i class="fas fa-couch"></i>
           </div>
-          <h3>Rental furniture</h3>
-          <p>For many of us, buying a home is a dream and one not easily attainable.</p>
+          <h3 data-i18n="furniture">Rental furniture</h3>
+          <p data-i18n="securityText">For many of us, buying a home is a dream and one not easily attainable.</p>
         </div>
         
         <div class="feature-card">
           <div class="feature-icon">
             <i class="fas fa-swimming-pool"></i>
           </div>
-          <h3>Swimming pool</h3>
-          <p>For many of us, buying a home is a dream and one not easily attainable.</p>
+          <h3 data-i18n="pool">Swimming pool</h3>
+          <p data-i18n="securityText">For many of us, buying a home is a dream and one not easily attainable.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="reviews">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-subtitle">REVIEWS</span>
-        <h2 class="section-title-review">Our valuable customer says</h2>
-      </div>
-      
-      <div class="reviews-carousel">
+<section class="reviews">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-subtitle" data-i18n="reviewsSub">REVIEWS</span>
+      <h2 class="section-title-review" data-i18n="reviewsTitle">Our valuable customer says</h2>
+    </div>
+    <div class="reviews-carousel">
 
-        <div class="review-slide active">
-          <div class="review-card">
-            <div class="review-content">
-              <p class="review-text">A good real estate agent doesn't disappear once the closing is signed. Buying a bigger home doesn't necessarily mean spend more money. Been there. Done that. Sold. Bought. Bringing It All Together.</p>
-            </div>
-            <div class="review-author">
-              <img src="../img/review-justin.png" alt="Justin Lee">
-              <div>
-                <h3>Justin Lee</h3>
-                <p>Products Designer at Ito</p>
-              </div>
-            </div>
+      <div class="review-slide active">
+        <div class="review-card">
+          <div class="review-content">
+            <p class="review-text" data-i18n="review1">A good real estate agent doesn't disappear once the closing is signed...</p>
           </div>
-          
-          <div class="review-card">
-            <div class="review-content">
-              <p class="review-text">Working with this agency was a game-changer for us. They found us the perfect home within our budget and made the whole process stress-free. Highly recommend their services!</p>
-            </div>
-            <div class="review-author">
-              <img src="../img/review-angel.png" alt="Sarah Johnson">
-              <div>
-                <h3>Sarah Johnson</h3>
-                <p>Marketing Director at TechCorp</p>
-              </div>
+          <div class="review-author">
+            <img src="../img/review-justin.png" alt="Justin Lee">
+            <div>
+              <h3>Justin Lee</h3>
+              <p>Products Designer at Ito</p>
             </div>
           </div>
         </div>
-
-        <div class="review-slide">
-          <div class="review-card">
-            <div class="review-content">
-              <p class="review-text">As first-time home buyers, we were nervous about the process. Our agent guided us every step of the way and negotiated an amazing deal. Couldn't be happier with our new home!</p>
-            </div>
-            <div class="review-author">
-              <img src="../img/review-justin.png" alt="Michael Chen">
-              <div>
-                <h3>Michael Chen</h3>
-                <p>Software Engineer at NexGen</p>
-              </div>
-            </div>
+        <div class="review-card">
+          <div class="review-content">
+            <p class="review-text" data-i18n="review2">Working with this agency was a game-changer for us...</p>
           </div>
-          
-          <div class="review-card">
-            <div class="review-content">
-              <p class="review-text">The team's market knowledge is exceptional. They helped us sell our property above asking price in just two weeks. Professional, responsive, and truly care about their clients.</p>
-            </div>
-            <div class="review-author">
-              <img src="../img/review-angel.png" alt="Emily Rodriguez">
-              <div>
-                <h3>Emily Rodriguez</h3>
-                <p>Financial Analyst at BankPlus</p>
-              </div>
+          <div class="review-author">
+            <img src="../img/review-angel.png" alt="Sarah Johnson">
+            <div>
+              <h3>Sarah Johnson</h3>
+              <p>Marketing Director at TechCorp</p>
             </div>
           </div>
         </div>
       </div>
-      
-      <div class="carousel-controls">
-        <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
-        <div class="carousel-dots">
-          <span class="dot active"></span>
-          <span class="dot"></span>
+
+      <div class="review-slide">
+        <div class="review-card">
+          <div class="review-content">
+            <p class="review-text" data-i18n="review3">As first-time home buyers, we were nervous about the process...</p>
+          </div>
+          <div class="review-author">
+            <img src="../img/review-justin.png" alt="Michael Chen">
+            <div>
+              <h3>Michael Chen</h3>
+              <p>Software Engineer at NexGen</p>
+            </div>
+          </div>
         </div>
-        <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
+        <div class="review-card">
+          <div class="review-content">
+            <p class="review-text" data-i18n="review4">The team's market knowledge is exceptional...</p>
+          </div>
+          <div class="review-author">
+            <img src="../img/review-angel.png" alt="Emily Rodriguez">
+            <div>
+              <h3>Emily Rodriguez</h3>
+              <p>Financial Analyst at BankPlus</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-slide">
+        <div class="review-card">
+          <div class="review-content">
+            <p class="review-text">The attention to detail was impressive. Every question we had was answered promptly.</p>
+          </div>
+          <div class="review-author">
+            <img src="../img/review-david.png" alt="David Kim">
+            <div>
+              <h3>David Kim</h3>
+              <p>Architect at UrbanDesign</p>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-content">
+            <p class="review-text">They made the entire buying process seamless and stress-free. Truly professionals!</p>
+          </div>
+          <div class="review-author">
+            <img src="../img/review-olga.png" alt="Olga Petrov">
+            <div>
+              <h3>Olga Petrov</h3>
+              <p>HR Manager at GlobalSoft</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-slide">
+        <div class="review-card">
+          <div class="review-content">
+            <p class="review-text">We got 15% above market price thanks to their negotiation skills. Outstanding!</p>
+          </div>
+          <div class="review-author">
+            <img src="../img/review-ahmed.png" alt="Ahmed Hassan">
+            <div>
+              <h3>Ahmed Hassan</h3>
+              <p>Entrepreneur</p>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-content">
+            <p class="review-text">As an investor, I appreciate their deep market insights and honesty.</p>
+          </div>
+          <div class="review-author">
+            <img src="../img/review-maria.png" alt="Maria Garcia">
+            <div>
+              <h3>Maria Garcia</h3>
+              <p>Real Estate Investor</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
+
+    <div class="carousel-controls">
+      <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
+      <div class="carousel-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+      <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </div>
+</section>
 
   <section class="cta-section">
     <div class="cta-container">
       <div class="cta-content">
-        <h2>Get listed your home as an owner</h2>
-        <p>Here is a list of the greatest real estate company slogans of all-time. These</p>
+        <h2 data-i18n="ctaTitle">Get listed your home as an owner</h2>
+        <p data-i18n="ctaText">Here is a list of the greatest real estate company slogans of all-time. These</p>
         <div class="cta-form">
-          <input type="email" placeholder="Enter email address">
-          <button class="cta-button">Get Started <i class="fas fa-arrow-right"></i></button>
+          <input type="email" data-i18n="emailPlaceholder" placeholder="Enter email address">
+          <button class="cta-button" data-i18n="getStarted">Get Started <i class="fas fa-arrow-right"></i></button>
         </div>
       </div>
     </div>
@@ -270,7 +317,7 @@
       <div class="footer-top">
         <div class="footer-brand">
           <div class="footer-logo">RUBYHOME.COM</div>
-          <p class="footer-description">Contrary to popular is not simply random text. It has</p>
+          <p class="footer-description" data-i18n="footerDesc">Contrary to popular is not simply random text. It has</p>
           <div class="footer-rating">
             <span><img src="../img/facebook.png" alt="Facebook"></span>
             <span><img src="../img/inst.png" alt="Instagram"></span>
@@ -282,33 +329,71 @@
         
         <div class="footer-links">
           <div class="links-column">
-            <h3 class="links-title">About</h3>
+            <h3 class="links-title" data-i18n="aboutTitle">About</h3>
             <ul class="links-list">
-              <li><a href="#">Company</a></li>
-              <li><a href="#">Team</a></li>
-              <li><a href="#">Career</a></li>
-              <li><a href="#">Blogs</a></li>
+              <li><a href="#" data-i18n="company">Company</a></li>
+              <li><a href="#" data-i18n="team">Team</a></li>
+              <li><a href="#" data-i18n="career">Career</a></li>
+              <li><a href="#" data-i18n="blogs">Blogs</a></li>
             </ul>
           </div>
           
           <div class="links-column">
-            <h3 class="links-title">Products</h3>
+            <h3 class="links-title" data-i18n="productsTitle">Products</h3>
             <ul class="links-list">
-              <li><a href="#">E-Books</a></li>
-              <li><a href="#">Preasantation</a></li>
-              <li><a href="#">Management</a></li>
-              <li><a href="#">Dashboard</a></li>
+              <li><a href="#" data-i18n="ebooks">E-Books</a></li>
+              <li><a href="#" data-i18n="presentation">Preasantation</a></li>
+              <li><a href="#" data-i18n="management">Management</a></li>
+              <li><a href="#" data-i18n="dashboard">Dashboard</a></li>
             </ul>
           </div>
           
           <div class="links-column">
-            <h3 class="links-title">Address</h3>
+            <h3 class="links-title" data-i18n="addressTitle">Address</h3>
             <ul class="links-list">
-              <li><a href="#">Country Delivery</a></li>
-              <li><a href="#">Counter Beach Post</a></li>
-              <li><a href="#">www.itobd.com</a></li>
-              <li><a href="#">+880175585555</a></li>
+              <li><a href="#" data-i18n="">Country Delivery</a></li>
+              <li><a href="#" data-i18n="">Counter Beach Post</a></li>
+              <li><a href="#" data-i18n="">www.itobd.com</a></li>
+              <li><a href="#" data-i18n="">+880175585555</a></li>
             </ul>
+          </div>
+
+          <div class="links-column-buttons">
+            <h3 class="links-title" data-i18n="">Buttons</h3>
+            <div id="accessibility-dropdown">
+  <button onclick="toggleDropdown()" class="btn" data-i18n="accessibility">👁 Для слабовидящих</button>
+  <div id="accessibility-menu">
+    <h2 data-i18n="accessibilityMode">Accessibility</h2>
+
+    <div>
+      <strong data-i18n="fontSizeLabel">Font Size:</strong>
+      <button onclick="setFontSize('small')" data-i18n="fontSizeSmall">Small</button>
+      <button onclick="setFontSize('medium')" data-i18n="fontSizeMedium">Medium</button>
+      <button onclick="setFontSize('large')" data-i18n="fontSizeLarge">Large</button>
+    </div>
+
+    <div>
+      <strong data-i18n="colorSchemeLabel">Color Scheme:</strong>
+      <button onclick="setColorScheme('black-white')" data-i18n="colorSchemeMonochrome">Black/White</button>
+      <button onclick="setColorScheme('black-green')" data-i18n="colorSchemeGreen">Black/Green</button>
+      <button onclick="setColorScheme('white-black')" data-i18n="colorSchemeWhite">White/Black</button>
+      <button onclick="setColorScheme('beige-brown')" data-i18n="colorSchemeBeige">Beige/Brown</button>
+      <button onclick="setColorScheme('blue-darkblue')" data-i18n="colorSchemeBlue">Blue/Dark Blue</button>
+    </div>
+
+    <div>
+      <strong data-i18n="imagesToggle">Images:</strong>
+      <button onclick="toggleImages(true)" data-i18n="toggleOff">Disable</button>
+      <button onclick="toggleImages(false)" data-i18n="toggleOn">Enable</button>
+    </div>
+
+    <button onclick="resetAccessibility()" data-i18n="reset">🔄 Reset settings</button>
+  </div>
+</div>
+              <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme">
+  <i class="fas fa-moon"></i>
+</button>
+<button id="reset-settings" class="reset-button" data-i18n="reset">🔄 Reset settings</button>
           </div>
         </div>
       </div>
@@ -322,5 +407,6 @@
   <script src="../js/users/logout.js"></script>
   <script src="../js/users/theme-toggle.js"></script>
   <script src="../js/users/reset.js"></script>
+  <script src="../js/users/visually.js"></script>
 </body>
 </html>

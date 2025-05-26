@@ -146,39 +146,6 @@
       }
     },
     {
-      "id": "2",
-      "image": "../img/home-picket.png",
-      "title": "Picket Fence Realty",
-      "location": "East London",
-      "address": "456 Picket Lane, London E2 7CD",
-      "beds": 5,
-      "baths": 3,
-      "parking": 2,
-      "sqft": 2800,
-      "yearBuilt": 2015,
-      "price": 6727000,
-      "liked": false,
-      "description": "Charming contemporary home with classic picket fence appeal. Features a gourmet kitchen, spa-like bathrooms, and beautifully landscaped gardens.",
-      "features": [
-        "Chef's kitchen",
-        "Solar panels",
-        "Home office",
-        "Finished basement",
-        "Smart irrigation"
-      ],
-      "gallery": [
-        "../img/properties/picket-fence/1.jpg",
-        "../img/properties/picket-fence/2.jpg",
-        "../img/properties/picket-fence/3.jpg"
-      ],
-      "agent": {
-        "name": "Michael Brown",
-        "phone": "+44 20 7654 3210",
-        "email": "michael@luxuryestate.com",
-        "photo": "../img/agents/michael.jpg"
-      }
-    },
-    {
       "id": "3",
       "image": "../img/home-banyon.png",
       "title": "Banyon Tree Realty",
@@ -306,6 +273,39 @@
         "phone": "+44 20 7234 5678",
         "email": "james@luxuryestate.com",
         "photo": "../img/agents/james.jpg"
+      }
+    },
+        {
+      "id": "2",
+      "image": "../img/home-picket.png",
+      "title": "Picket Fence Realty",
+      "location": "East London",
+      "address": "456 Picket Lane, London E2 7CD",
+      "beds": 5,
+      "baths": 3,
+      "parking": 2,
+      "sqft": 2800,
+      "yearBuilt": 2015,
+      "price": 6727000,
+      "liked": false,
+      "description": "Charming contemporary home with classic picket fence appeal. Features a gourmet kitchen, spa-like bathrooms, and beautifully landscaped gardens.",
+      "features": [
+        "Chef's kitchen",
+        "Solar panels",
+        "Home office",
+        "Finished basement",
+        "Smart irrigation"
+      ],
+      "gallery": [
+        "../img/properties/picket-fence/1.jpg",
+        "../img/properties/picket-fence/2.jpg",
+        "../img/properties/picket-fence/3.jpg"
+      ],
+      "agent": {
+        "name": "Michael Brown",
+        "phone": "+44 20 7654 3210",
+        "email": "michael@luxuryestate.com",
+        "photo": "../img/agents/michael.jpg"
       }
     }
   ],

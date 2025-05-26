@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const articleText = document.getElementById('articleText');
   const recentPostsContainer = document.querySelector('.recent-posts');
 
-  articleText.innerHTML = `<p>Loading article...</p>`;
+  articleText.innerHTML = `<p data-i18n="larts">Loading article...</p>`;
 
   fetch(articleUrl)
     .then(response => {

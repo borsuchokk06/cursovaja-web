@@ -401,7 +401,15 @@ body {
   font-weight: 700;
   margin: 40px 100px 20px;
   position: relative;
-  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+}
+
+.section-title div{
+  display: flex;
+  gap: 5px;
+  flex-direction: row;
 }
 
 .section-title .highlight {
@@ -500,6 +508,11 @@ body {
   cursor: pointer;
 }
 
+.btn-view a{
+  color: #fff;
+  text-decoration: none;
+}
+
 .like-icon {
   position: absolute;
   top: 10px;
@@ -521,6 +534,7 @@ body {
   .hero .text {
     margin-bottom: 2rem;
     text-align: left;
+    width: 100%;
   }
 
   .search-tabs, .search-fields {
@@ -544,6 +558,10 @@ body {
   .cta-form input {
     width: 100%;
   }
+
+.section-title div{
+  flex-direction: column;
+}
 }
 
 @media (max-width: 480px) {

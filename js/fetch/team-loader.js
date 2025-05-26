@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
       container.innerHTML = `
         <div class="loading-state">
           <div class="spinner"></div>
-          <p>Loading team members...</p>
+          <p data-i18n="ltm">Loading team members...</p>
         </div>
       `;
     }
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (container) {
       container.innerHTML = `
         <div class="error-message">
-          <h3>Unable to load team members</h3>
+          <h3 data-i18n="utltm">Unable to load team members</h3>
           <p>${error.message}</p>
         </div>
       `;
@@ -52,8 +52,8 @@ document.addEventListener('DOMContentLoaded', function () {
     if (membersToShow.length === 0) {
       teamFullContainer.innerHTML = `
         <div class="no-results">
-          <h3>No team members found</h3>
-          <p>Try adjusting your search or filters</p>
+          <h3 data-i18n="ntmf">No team members found</h3>
+          <p data-i18n="taysof">Try adjusting your search or filters</p>
         </div>
       `;
       return;
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const initPositionFilter = () => {
     if (!positionFilter) return;
     
-    positionFilter.innerHTML = '<option value="">All Positions</option>';
+    positionFilter.innerHTML = '<option value="" data-i18n="alpa">All Positions</option>';
     const positions = [...new Set(teamData.map(member => member.position))];
     
     positions.forEach(position => {

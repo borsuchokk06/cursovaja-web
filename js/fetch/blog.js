@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
   blogGrid.innerHTML = `
     <div class="loading-state">
       <div class="spinner"></div>
-      <p>Loading articles...</p>
+      <p data-i18n="lart">Loading articles...</p>
     </div>
   `;
 
@@ -26,8 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
     .then(data => {
       blogArticles = data;
       filteredArticles = [...blogArticles];
-      
-      // Initialize controls
+
       initCategoryFilter();
       initEventListeners();
       
@@ -38,17 +37,15 @@ document.addEventListener('DOMContentLoaded', function () {
       console.error('Error fetching articles:', error);
       blogGrid.innerHTML = `
         <div class="error-message">
-          <h3>Unable to load blog articles</h3>
+          <h3 data-i18n="utlba">Unable to load blog articles</h3>
           <p>${error.message}</p>
         </div>
       `;
     });
 
   function initCategoryFilter() {
-    // Get unique categories
     const categories = [...new Set(blogArticles.map(article => article.category))];
-    
-    // Populate category filter
+
     categories.forEach(category => {
       const option = document.createElement('option');
       option.value = category;
@@ -58,13 +55,11 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function initEventListeners() {
-    // Search functionality
     searchBtn.addEventListener('click', applyFilters);
     searchInput.addEventListener('keyup', (e) => {
       if (e.key === 'Enter') applyFilters();
     });
-    
-    // Filter and sort changes
+
     categoryFilter.addEventListener('change', applyFilters);
     sortBy.addEventListener('change', applyFilters);
   }
@@ -73,8 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const searchTerm = searchInput.value.toLowerCase();
     const selectedCategory = categoryFilter.value;
     const sortValue = sortBy.value;
-    
-    // Apply filters
+
     filteredArticles = blogArticles.filter(article => {
       const matchesSearch = article.title.toLowerCase().includes(searchTerm) || 
                           article.excerpt.toLowerCase().includes(searchTerm) ||
@@ -84,11 +78,9 @@ document.addEventListener('DOMContentLoaded', function () {
       
       return matchesSearch && matchesCategory;
     });
-    
-    // Apply sorting
+
     sortArticles(sortValue);
-    
-    // Reset to first page
+
     currentPage = 1;
     renderArticles(currentPage);
     renderPagination();
@@ -118,8 +110,8 @@ document.addEventListener('DOMContentLoaded', function () {
     if (articlesToShow.length === 0) {
       blogGrid.innerHTML = `
         <div class="no-results">
-          <h3>No articles found</h3>
-          <p>Try adjusting your search or filters</p>
+          <h3 data-i18n="naf">No articles found</h3>
+          <p data-i18n="taysofi">Try adjusting your search or filters</p>
         </div>
       `;
       return;
@@ -134,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
           <span class="blog-date">${article.date} • ${article.category}</span>
           <h3 class="blog-title">${article.title}</h3>
           <p class="blog-excerpt">${article.excerpt}</p>
-          <a href="article.html?id=${article.id}" class="read-more">Read More</a>
+          <a href="article.html?id=${article.id}" class="read-more" data-i18n="rm">Read More</a>
         </div>
       </article>
     `).join('');

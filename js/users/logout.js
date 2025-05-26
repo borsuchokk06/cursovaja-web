@@ -1,5 +1,5 @@
 document.getElementById('logoutBtn').addEventListener('click', () => {
   localStorage.removeItem('currentUser');
 
-  location.reload();
+  window.location.href = '../../pages/home.html';
 });

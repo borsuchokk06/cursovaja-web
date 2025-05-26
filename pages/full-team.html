@@ -12,20 +12,24 @@
   <link rel="stylesheet" href="../css/team.css">
       <link rel="stylesheet" href="../css/admin.css">
             <link rel="stylesheet" href="../css/team-controls.css">
+              <link rel="stylesheet" href="../css/theme.css">
+  <link rel="stylesheet" href="../css/visually.css">
+    <link rel="stylesheet" href="../css/lang-switcher.css">
+  <script src="../js/users/i18n.js" defer></script>
 </head>
 <body>
 <header>
   <div class="logo"><img src="../img/home-logo.png" alt="Logo"></div>
-  <nav class="desktop-nav">
-    <a href="home.html">Home</a>
-    <a href="properties.html">Properties</a>
-    <a href="about.html">About us</a>
-    <a href="blog.html" class="active">Blog</a>
-    <a href="contact.html" class="btn">Contact us</a>
-    <a href="#" id="logoutBtn" style="display:none;">Выйти</a>
-    <a href="login.html" class="btn register-btn">Login</a>
-    <a href="register.html" class="btn register-btn">Register</a>
-  </nav>
+<nav class="desktop-nav">
+  <a href="home.html" data-i18n="home">Home</a>
+  <a href="properties.html" data-i18n="properties">Properties</a>
+  <a href="about.html" data-i18n="about">About us</a>
+  <a href="blog.html" class="active" data-i18n="blog">Blog</a>
+  <a href="contact.html" class="btn" data-i18n="contact">Contact us</a>
+  <a href="#" id="logoutBtn" style="display:none;" data-i18n="logout">Logout</a>
+  <a href="login.html" class="btn register-btn" data-i18n="login">Login</a>
+  <a href="register.html" class="btn register-btn" data-i18n="register">Register</a>
+</nav>
   <button class="burger-btn" aria-label="Menu">
     <i class="fas fa-bars"></i>
   </button>
@@ -38,16 +42,16 @@
       <i class="fas fa-times"></i>
     </button>
   </div>
-  <nav class="mobile-nav">
-    <a href="home.html">Home</a>
-    <a href="properties.html">Properties</a>
-    <a href="about.html">About us</a>
-    <a href="blog.html" class="active">Blog</a>
-    <a href="contact.html" class="btn">Contact us</a>
-    <a href="#" id="logoutBtn" style="display:none;">Выйти</a>
-    <a href="login.html" class="btn register-btn">Login</a>
-    <a href="register.html" class="btn register-btn">Register</a>
-  </nav>
+<nav class="mobile-nav">
+  <a href="home.html" data-i18n="home">Home</a>
+  <a href="properties.html" data-i18n="properties">Properties</a>
+  <a href="about.html" data-i18n="about">About us</a>
+  <a href="blog.html" data-i18n="blog">Blog</a>
+  <a href="contact.html" class="btn" data-i18n="contact">Contact us</a>
+  <a href="#" id="logoutBtn" style="display:none;" data-i18n="logout">Logout</a>
+  <a href="login.html" class="btn register-btn" data-i18n="login">Login</a>
+  <a href="register.html" class="btn register-btn" data-i18n="register">Register</a>
+</nav>
 </div>
 <div class="overlay"></div>
 
@@ -57,24 +61,24 @@
 
       <div class="control-group">
         <div class="search-box">
-          <input type="text" id="searchInput" placeholder="Search team members...">
+          <input type="text" id="searchInput" data-i18n="stm" placeholder="Search team members...">
           <button id="searchBtn"><i class="fas fa-search"></i></button>
         </div>
       </div>
 
       <div class="control-group">
         <select id="positionFilter">
-          <option value="">All Positions</option>
+          <option value="" data-i18n="ap">All Positions</option>
 
         </select>
       </div>
 
       <div class="control-group">
         <select id="sortBy">
-          <option value="name-asc">Name (A-Z)</option>
-          <option value="name-desc">Name (Z-A)</option>
-          <option value="position-asc">Position (A-Z)</option>
-          <option value="position-desc">Position (Z-A)</option>
+          <option value="name-asc" data-i18n="naz">Name (A-Z)</option>
+          <option value="name-desc" data-i18n="nza">Name (Z-A)</option>
+          <option value="position-asc" data-i18n="paz">Position (A-Z)</option>
+          <option value="position-desc" data-i18n="pza">Position (Z-A)</option>
         </select>
       </div>
     </div>
@@ -83,8 +87,8 @@
 
   <section class="full-team-section">
     <div class="container">
-      <h1>Our Full Team</h1>
-      <p class="section-subtitle">Meet all the talented professionals behind RubyHome</p>
+      <h1 data-i18n="oft">Our Full Team</h1>
+      <p class="section-subtitle" data-i18n="mattpbr">Meet all the talented professionals behind RubyHome</p>
       <div class="team-grid" id="fullTeamContainer"></div>
     </div>
   </section>
@@ -92,8 +96,8 @@
 
 
   <div id="adminControls" style="position: fixed; bottom: 20px; right: 20px; display: none;">
-  <button id="addTeamMemberBtn" class="admin-btn" style="background: #4CAF50;">Add Team Member</button>
-  <button id="openDeleteTeamListBtn" class="admin-btn" style="background: #f44336; margin-left: 10px;">Delete Team Members</button>
+  <button id="addTeamMemberBtn" class="admin-btn" style="background: #4CAF50;" data-i18n="atm">+ Add Team Member</button>
+  <button id="openDeleteTeamListBtn" class="admin-btn" style="background: #f44336; margin-left: 10px;" data-i18n="dtme">- Delete Team Members</button>
 </div>
 
 <div id="addTeamModal" class="modal">
@@ -106,7 +110,7 @@
 <div id="deleteTeamListModal" class="modal">
   <div class="modal-content">
     <span class="close">&times;</span>
-    <h2>Delete Team Members</h2>
+    <h2 data-i18n="dtm">Delete Team Members</h2>
     <div id="teamDeleteList"></div>
   </div>
 </div>
@@ -117,7 +121,7 @@
       <div class="footer-top">
         <div class="footer-brand">
           <div class="footer-logo">RUBYHOME.COM</div>
-          <p class="footer-description">Contrary to popular is not simply random text. It has</p>
+          <p class="footer-description" data-i18n="footerDesc">Contrary to popular is not simply random text. It has</p>
           <div class="footer-rating">
             <span><img src="../img/facebook.png" alt="Facebook"></span>
             <span><img src="../img/inst.png" alt="Instagram"></span>
@@ -129,33 +133,71 @@
         
         <div class="footer-links">
           <div class="links-column">
-            <h3 class="links-title">About</h3>
+            <h3 class="links-title" data-i18n="aboutTitle">About</h3>
             <ul class="links-list">
-              <li><a href="#">Company</a></li>
-              <li><a href="#">Team</a></li>
-              <li><a href="#">Career</a></li>
-              <li><a href="#">Blogs</a></li>
+              <li><a href="#" data-i18n="company">Company</a></li>
+              <li><a href="#" data-i18n="team">Team</a></li>
+              <li><a href="#" data-i18n="career">Career</a></li>
+              <li><a href="#" data-i18n="blogs">Blogs</a></li>
             </ul>
           </div>
           
           <div class="links-column">
-            <h3 class="links-title">Products</h3>
+            <h3 class="links-title" data-i18n="productsTitle">Products</h3>
             <ul class="links-list">
-              <li><a href="#">E-Books</a></li>
-              <li><a href="#">Preasantation</a></li>
-              <li><a href="#">Management</a></li>
-              <li><a href="#">Dashboard</a></li>
+              <li><a href="#" data-i18n="ebooks">E-Books</a></li>
+              <li><a href="#" data-i18n="presentation">Preasantation</a></li>
+              <li><a href="#" data-i18n="management">Management</a></li>
+              <li><a href="#" data-i18n="dashboard">Dashboard</a></li>
             </ul>
           </div>
           
           <div class="links-column">
-            <h3 class="links-title">Address</h3>
+            <h3 class="links-title" data-i18n="addressTitle">Address</h3>
             <ul class="links-list">
-              <li><a href="#">Country Delivery</a></li>
-              <li><a href="#">Counter Beach Post</a></li>
-              <li><a href="#">www.itobd.com</a></li>
-              <li><a href="#">+880175585555</a></li>
+              <li><a href="#" data-i18n="">Country Delivery</a></li>
+              <li><a href="#" data-i18n="">Counter Beach Post</a></li>
+              <li><a href="#" data-i18n="">www.itobd.com</a></li>
+              <li><a href="#" data-i18n="">+880175585555</a></li>
             </ul>
+          </div>
+
+          <div class="links-column-buttons">
+            <h3 class="links-title" data-i18n="">Buttons</h3>
+            <div id="accessibility-dropdown">
+  <button onclick="toggleDropdown()" class="btn" data-i18n="accessibility">👁 Для слабовидящих</button>
+  <div id="accessibility-menu">
+    <h2 data-i18n="accessibilityMode">Accessibility</h2>
+
+    <div>
+      <strong data-i18n="fontSizeLabel">Font Size:</strong>
+      <button onclick="setFontSize('small')" data-i18n="fontSizeSmall">Small</button>
+      <button onclick="setFontSize('medium')" data-i18n="fontSizeMedium">Medium</button>
+      <button onclick="setFontSize('large')" data-i18n="fontSizeLarge">Large</button>
+    </div>
+
+    <div>
+      <strong data-i18n="colorSchemeLabel">Color Scheme:</strong>
+      <button onclick="setColorScheme('black-white')" data-i18n="colorSchemeMonochrome">Black/White</button>
+      <button onclick="setColorScheme('black-green')" data-i18n="colorSchemeGreen">Black/Green</button>
+      <button onclick="setColorScheme('white-black')" data-i18n="colorSchemeWhite">White/Black</button>
+      <button onclick="setColorScheme('beige-brown')" data-i18n="colorSchemeBeige">Beige/Brown</button>
+      <button onclick="setColorScheme('blue-darkblue')" data-i18n="colorSchemeBlue">Blue/Dark Blue</button>
+    </div>
+
+    <div>
+      <strong data-i18n="imagesToggle">Images:</strong>
+      <button onclick="toggleImages(true)" data-i18n="toggleOff">Disable</button>
+      <button onclick="toggleImages(false)" data-i18n="toggleOn">Enable</button>
+    </div>
+
+    <button onclick="resetAccessibility()" data-i18n="reset">🔄 Reset settings</button>
+  </div>
+</div>
+              <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme">
+  <i class="fas fa-moon"></i>
+</button>
+<button id="reset-settings" class="reset-button" data-i18n="reset">🔄 Reset settings</button>
           </div>
         </div>
       </div>
@@ -168,5 +210,8 @@
     <script src="../js/users/user.js"></script>
   <script src="../js/users/logout.js"></script>
     <script src="../js/admin-panel/team-admin.js"></script>
+      <script src="../js/users/theme-toggle.js"></script>
+  <script src="../js/users/reset.js"></script>
+  <script src="../js/users/visually.js"></script>
 </body>
 </html>

@@ -11,11 +11,10 @@ document.addEventListener('DOMContentLoaded', function() {
   const locationFilter = document.getElementById('locationFilter');
   const sortBy = document.getElementById('sortBy');
 
-  // Loading state
   propertiesContainer.innerHTML = `
     <div class="loading-state">
       <div class="spinner"></div>
-      <p>Loading properties...</p>
+      <p data-i18n="lpro">Loading properties...</p>
     </div>
   `;
 
@@ -28,8 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (!Array.isArray(properties)) throw new Error('Invalid properties format');
       allProperties = properties;
       filteredProperties = [...allProperties];
-      
-      // Initialize controls
+
       initLocationFilter();
       initEventListeners();
       
@@ -40,20 +38,18 @@ document.addEventListener('DOMContentLoaded', function() {
       console.error('Error loading properties:', error);
       propertiesContainer.innerHTML = `
         <div class="error-message">
-          <h3>Error Loading Properties</h3>
+          <h3 data-i18n="elpr">Error Loading Properties</h3>
           <p>${error.message}</p>
-          <button onclick="window.location.reload()">Try Again</button>
+          <button onclick="window.location.reload()" data-i18n="ta">Try Again</button>
         </div>
       `;
     });
 
   function initLocationFilter() {
     if (!locationFilter) return;
-    
-    // Get unique locations
+
     const locations = [...new Set(allProperties.map(property => property.location))];
-    
-    // Populate location filter
+
     locations.forEach(location => {
       const option = document.createElement('option');
       option.value = location;
@@ -63,13 +59,11 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function initEventListeners() {
-    // Search functionality
     if (searchBtn) searchBtn.addEventListener('click', applyFilters);
     if (searchInput) searchInput.addEventListener('keyup', (e) => {
       if (e.key === 'Enter') applyFilters();
     });
-    
-    // Filter and sort changes
+
     if (locationFilter) locationFilter.addEventListener('change', applyFilters);
     if (sortBy) sortBy.addEventListener('change', applyFilters);
   }
@@ -78,8 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
     const selectedLocation = locationFilter ? locationFilter.value : '';
     const sortValue = sortBy ? sortBy.value : 'price-desc';
-    
-    // Apply filters
+
     filteredProperties = allProperties.filter(property => {
       const matchesSearch = property.title.toLowerCase().includes(searchTerm) || 
                           property.location.toLowerCase().includes(searchTerm) ||
@@ -89,11 +82,9 @@ document.addEventListener('DOMContentLoaded', function() {
       
       return matchesSearch && matchesLocation;
     });
-    
-    // Apply sorting
+
     sortProperties(sortValue);
-    
-    // Reset to first page
+
     currentPage = 1;
     renderProperties(currentPage);
     renderPagination();
@@ -146,8 +137,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (pageProperties.length === 0) {
       propertiesContainer.innerHTML = `
         <div class="no-results">
-          <h3>No properties found</h3>
-          <p>Try adjusting your search or filters</p>
+          <h3 data-i18n="npf">No properties found</h3>
+          <p data-i18n="tay">Try adjusting your search or filters</p>
         </div>
       `;
       return;
@@ -173,7 +164,7 @@ document.addEventListener('DOMContentLoaded', function() {
               </div>
               <div class="card-footer">
                 <span class="price">$${property.price.toLocaleString()}</span>
-                <button class="btn-view" data-id="${property.id}">View Details</button>
+                <button class="btn-view" data-id="${property.id}" data-i18n="viewDetails">View Details</button>
               </div>
             </div>
           </div>

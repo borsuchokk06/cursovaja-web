@@ -37,7 +37,7 @@ fetch(`http://localhost:3000/properties/${propertyId}`)
     if (property.features && property.features.length > 0) {
       featuresList.innerHTML = property.features.map(feature => `<li>${feature}</li>`).join('');
     } else {
-      featuresList.innerHTML = '<li>No features listed</li>';
+      featuresList.innerHTML = '<li data-i18n="ndfl">No features listed</li>';
     }
 
     const galleryGrid = document.querySelector('.gallery-grid');
@@ -65,7 +65,7 @@ fetch(`http://localhost:3000/properties/${propertyId}`)
         agentPhoto.style.display = 'none';
       }
     } else {
-      document.querySelector('.agent-card').innerHTML = '<p>No agent information available</p>';
+      document.querySelector('.agent-card').innerHTML = '<p data-i18n="naia">No agent information available</p>';
     }
 
     const propertyHero = document.getElementById('propertyHero');
@@ -78,7 +78,7 @@ fetch(`http://localhost:3000/properties/${propertyId}`)
         </div>
       `;
     } else {
-      propertyHero.innerHTML = '<div class="no-image">No Image Available</div>';
+      propertyHero.innerHTML = '<div class="no-image" data-i18n="nia">No Image Available</div>';
     }
 
     const likeBtn = document.getElementById('likeBtn');
@@ -92,9 +92,9 @@ fetch(`http://localhost:3000/properties/${propertyId}`)
   function showError(message) {
     document.querySelector('.property-hero').innerHTML = `
       <div class="error-message">
-        <h3>Error Loading Property</h3>
+        <h3 data-i18n="elp">Error Loading Property</h3>
         <p>${message}</p>
-        <button onclick="window.location.href='properties.html'">Back to Properties</button>
+        <button onclick="window.location.href='properties.html'" data-i18n="btp">Back to Properties</button>
       </div>
     `;
   }

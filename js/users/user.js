@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const currentUserRaw = localStorage.getItem('currentUser');
   const registerButtons = document.querySelectorAll('.register-btn');
   const logoutBtn = document.getElementById('logoutBtn');
-
+  const navLinks = document.querySelectorAll('a');
   const adminControls = document.getElementById('adminControls');
   const addModal = document.getElementById('addModal');
   const deleteModal = document.getElementById('deleteModal');
@@ -13,6 +13,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let isAdmin = false;
 
+  navLinks.forEach(link => {
+    link.addEventListener('click', (event) => {
+      if (!currentUserRaw) {
+        event.preventDefault(); 
+        window.location.href = '../../pages/login.html'; 
+      }
+    });
+  });
   if (currentUserRaw) {
     const currentUser = JSON.parse(currentUserRaw);
 

@@ -1,10 +1,9 @@
 document.getElementById('reset-settings').addEventListener('click', () => {
-  document.body.classList.remove('dark-theme', 'accessible');
+  document.body.classList.remove('dark-theme');
   
 
   localStorage.removeItem('theme');      
-  localStorage.removeItem('language');   
-  localStorage.removeItem('accessible'); 
+  localStorage.removeItem('preferredLanguage');   
   
   document.documentElement.lang = 'en';
 

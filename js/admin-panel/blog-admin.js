@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const addModal = document.getElementById('addArticleModal');
     const deleteListModal = document.getElementById('deleteArticleListModal');
 
-    // Ensure buttons exist before adding event listeners
     if (addArticleBtn) {
       addArticleBtn.addEventListener('click', showAddModal);
     }
@@ -55,13 +54,13 @@ document.addEventListener('DOMContentLoaded', () => {
   function showAddModal() {
     const form = document.getElementById('articleForm');
     form.innerHTML = `
-      <div class="form-group"><label>Title:</label><input type="text" name="title" required></div>
-      <div class="form-group"><label>Category:</label><input type="text" name="category" required></div>
-      <div class="form-group"><label>Image URL:</label><input type="text" name="image" required></div>
-      <div class="form-group"><label>Date:</label><input type="date" name="date" required></div>
-      <div class="form-group"><label>Excerpt:</label><textarea name="excerpt" required></textarea></div>
-      <div class="form-group"><label>Content:</label><textarea name="content" rows="6" required></textarea></div>
-      <button type="submit" class="admin-btn">Add Article</button>
+      <div class="form-group"><label>Заголовок:</label><input type="text" name="title" required></div>
+      <div class="form-group"><label>Категория:</label><input type="text" name="category" required></div>
+      <div class="form-group"><label>Изображение URL:</label><input type="text" name="image" required></div>
+      <div class="form-group"><label>Дата:</label><input type="date" name="date" required></div>
+      <div class="form-group"><label>Отрывок:</label><textarea name="excerpt" required></textarea></div>
+      <div class="form-group"><label>Содержание:</label><textarea name="content" rows="6" required></textarea></div>
+      <button type="submit" class="admin-btn">Добавить статью</button>
     `;
     document.getElementById('addArticleModal').style.display = 'block';
   }
