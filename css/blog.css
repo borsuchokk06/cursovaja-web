@@ -13,7 +13,7 @@
     
 .blog-header {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-              url('../img/blog-banner.jpg') center/cover no-repeat;
+              url('../img/blog-banner.webp') center/cover no-repeat;
   color: white;
   padding: 100px 0;
   text-align: center;

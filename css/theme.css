@@ -31,7 +31,8 @@ body.dark-theme .article-header{
 body.dark-theme .feature-card,
 body.dark-theme .value-card,
 body.dark-theme .team-member,
-body.dark-theme .agent-card{
+body.dark-theme .agent-card,
+body.dark-theme .mobile-menu{
   background: #f9f9f948;
   color: #fff;
 }
