@@ -29,7 +29,7 @@ export function setupFormHandlers() {
       setCurrentUser(user);
       alert('Регистрация прошла успешно!');
       form.reset();
-      window.location.href = '../../pages/home.html';
+      window.location.href = '../pages/home.html';
     } catch {
       alert('Ошибка при регистрации');
     }
