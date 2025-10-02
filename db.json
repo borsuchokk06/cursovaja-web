@@ -109,6 +109,18 @@
       "birthdate": "2005-05-05",
       "username": "coolcat849",
       "role": "user"
+    },
+    {
+      "id": "b729",
+      "email": "ewrewrw@gmail.com",
+      "password": "NkvVF4eTX&BS",
+      "phone": "+375294534535",
+      "lastName": "rewrew",
+      "firstName": "rwerwerw",
+      "middleName": "",
+      "birthdate": "2000-02-21",
+      "username": "luckytiger494",
+      "role": "user"
     }
   ],
   "properties": [
@@ -275,7 +287,7 @@
         "photo": "../img/about-director.jpg"
       }
     },
-        {
+    {
       "id": "2",
       "image": "../img/home-picket.png",
       "title": "Picket Fence Realty",
@@ -337,13 +349,6 @@
       "position": "Marketing Director",
       "bio": "Emily crafts compelling narratives that showcase our properties in the best light.",
       "image": "../img/emily.jpg"
-    },
-    {
-      "id": "5",
-      "name": "Robert Kim",
-      "position": "Senior Agent",
-      "bio": "Robert's extensive network connects buyers with exclusive off-market properties.",
-      "image": "../img/robert.jpg"
     }
   ]
 }

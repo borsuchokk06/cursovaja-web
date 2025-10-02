@@ -24,6 +24,9 @@
   <a href="about.html" data-i18n="about" id="noclick">About us</a>
   <a href="blog.html" class="active" data-i18n="blog" id="noclick">Blog</a>
   <a href="contact.html" class="btn" data-i18n="contact" id="noclick">Contact us</a>
+  <a href="#" id="logoutBtn" style="display:none;" data-i18n="logout">Logout</a>
+  <a href="login.html" class="btn register-btn" data-i18n="login">Login</a>
+  <a href="register.html" class="btn register-btn" data-i18n="register">Register</a>
 </nav>
   <button class="burger-btn" aria-label="Menu">
     <i class="fas fa-bars"></i>
@@ -41,99 +44,102 @@
   <a href="home.html" data-i18n="home">Home</a>
   <a href="properties.html" data-i18n="properties" id="noclick">Properties</a>
   <a href="about.html" data-i18n="about" id="noclick">About us</a>
-  <a href="blog.html" class="active" data-i18n="blog" id="noclick">Blog</a>
+  <a href="blog.html" data-i18n="blog" id="noclick">Blog</a>
   <a href="contact.html" class="btn" data-i18n="contact" id="noclick">Contact us</a>
+  <a href="#" id="logoutBtn" style="display:none;" data-i18n="logout">Logout</a>
+  <a href="login.html" class="btn register-btn" data-i18n="login">Login</a>
+  <a href="register.html" class="btn register-btn" data-i18n="register">Register</a>
 </nav>
 </div>
 <div class="overlay"></div>
   <div class="register-container">
     <div class="register-header">
-      <h1>Создать аккаунт</h1>
-      <p>Уже есть аккаунт? <a href="login.html">Войти</a></p>
+      <h1 data-i18n="registerTitle">Создать аккаунт</h1>
+      <p data-i18n="registerSubtitle">Уже есть аккаунт? <a href="login.html" data-i18n="signIn">Войти</a></p>
     </div>
 
     <form id="registerForm">
 
       <div class="form-group">
-        <label for="phone">Номер телефона (РБ) <span class="required">*</span></label>
+        <label for="phone" data-i18n="phone">Номер телефона (РБ) <span class="required" data-i18n="requiredField">*</span></label>
         <div class="input-with-prefix">
           <span class="prefix">+375</span>
-          <input type="text" id="phone" name="phone" placeholder="29 1234567" maxlength="9" required>
+          <input type="text" id="phone" name="phone" placeholder="29 1234567" data-i18n="phonePlaceholder" maxlength="9" required>
         </div>
         <div class="error-message" id="phoneError"></div>
       </div>
 
       <div class="form-group">
-        <label for="email">Email <span class="required">*</span></label>
-        <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+        <label for="email" data-i18n="email">Email <span class="required" data-i18n="requiredField">*</span></label>
+        <input type="email" id="email" name="email" placeholder="example@mail.com" data-i18n="emailPlaceholder" required>
         <div class="error-message" id="emailError"></div>
       </div>
 
       <div class="form-group">
-        <label for="birthdate">Дата рождения <span class="required">*</span></label>
+        <label for="birthdate" data-i18n="birthdate">Дата рождения <span class="required" data-i18n="requiredField">*</span></label>
         <input type="date" id="birthdate" name="birthdate" required>
         <div class="error-message" id="birthdateError"></div>
       </div>
 
       <div class="form-group">
-        <label>Пароль <span class="required">*</span></label>
+        <label data-i18n="password">Пароль <span class="required" data-i18n="requiredField">*</span></label>
         <div class="password-options">
           <label>
-            <input type="radio" name="passwordOption" value="auto" checked> Сгенерировать автоматически
+            <input type="radio" name="passwordOption" value="auto" checked> <span data-i18n="autoGenerate">Сгенерировать автоматически</span>
           </label>
           <label>
-            <input type="radio" name="passwordOption" value="manual"> Ввести вручную
+            <input type="radio" name="passwordOption" value="manual"> <span data-i18n="manualInput">Ввести вручную</span>
           </label>
         </div>
 
         <div id="manualPasswordFields" style="display: none;">
-          <input type="password" id="password" name="password" placeholder="Введите пароль" minlength="8" maxlength="20">
+          <input type="password" id="password" name="password" placeholder="Введите пароль" data-i18n="passwordPlaceholder" minlength="8" maxlength="20">
           <div class="password-strength">
             <div class="strength-meter">
               <div class="strength-bar"></div>
             </div>
             <div class="strength-text"></div>
           </div>
-          <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Повторите пароль">
+          <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Повторите пароль" data-i18n="confirmPasswordPlaceholder">
           <div class="error-message" id="passwordError"></div>
         </div>
         <div id="autoPasswordField">
           <input type="text" id="autoPassword" name="autoPassword" readonly>
-          <button type="button" id="generatePassword" class="secondary-btn">Сгенерировать новый</button>
+          <button type="button" id="generatePassword" class="secondary-btn" data-i18n="generateNew">Сгенерировать новый</button>
         </div>
       </div>
 
       <div class="form-group">
-        <label for="lastName">Фамилия <span class="required">*</span></label>
-        <input type="text" id="lastName" name="lastName" required>
+        <label for="lastName" data-i18n="lastName">Фамилия <span class="required" data-i18n="requiredField">*</span></label>
+        <input type="text" id="lastName" name="lastName" placeholder="Введите фамилию" data-i18n="lastNamePlaceholder" required>
 
-        <label for="firstName">Имя <span class="required">*</span></label>
-        <input type="text" id="firstName" name="firstName" required>
+        <label for="firstName" data-i18n="firstName">Имя <span class="required" data-i18n="requiredField">*</span></label>
+        <input type="text" id="firstName" name="firstName" placeholder="Введите имя" data-i18n="firstNamePlaceholder" required>
 
-        <label for="middleName">Отчество</label>
-        <input type="text" id="middleName" name="middleName">
+        <label for="middleName" data-i18n="middleName">Отчество</label>
+        <input type="text" id="middleName" name="middleName" placeholder="Введите отчество" data-i18n="middleNamePlaceholder">
       </div>
 
       <div class="form-group">
-        <label for="username">Никнейм <span class="required">*</span></label>
+        <label for="username" data-i18n="username">Никнейм <span class="required" data-i18n="requiredField">*</span></label>
         <div class="username-generator">
-          <input type="text" id="username" name="username" required>
-          <button type="button" id="generateUsername" class="secondary-btn">Сгенерировать</button>
+          <input type="text" id="username" name="username" placeholder="Введите никнейм" data-i18n="usernamePlaceholder" required>
+          <button type="button" id="generateUsername" class="secondary-btn" data-i18n="generate">Сгенерировать</button>
         </div>
         <div class="error-message" id="usernameError"></div>
-        <div class="attempts-counter">Попыток осталось: <span id="attemptsLeft">5</span></div>
+        <div class="attempts-counter" data-i18n="attemptsLeft">Попыток осталось: <span id="attemptsLeft">5</span></div>
       </div>
 
       <div class="form-group agreement">
         <label>
           <input type="checkbox" id="agreement" name="agreement" required>
-          Я прочитал(а) и согласен(а) с <a href="#" target="_blank">Соглашением пользователя</a>
-          <span class="required">*</span>
+          <span data-i18n="agreement">Я прочитал(а) и согласен(а) с</span> <a href="#" target="_blank" data-i18n="userAgreement">Соглашением пользователя</a>
+          <span class="required" data-i18n="requiredField">*</span>
         </label>
         <div class="error-message" id="agreementError"></div>
       </div>
 
-      <button type="submit" id="registerBtn" class="primary-btn" disabled>Зарегистрироваться</button>
+      <button type="submit" id="registerBtn" class="primary-btn" disabled data-i18n="registerBtn">Зарегистрироваться</button>
     </form>
   </div>
 

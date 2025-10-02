@@ -16,9 +16,9 @@
   <link rel="stylesheet" href="../css/header.css" />
   <link rel="stylesheet" href="../css/footer.css" />
   <link rel="stylesheet" href="../css/login.css" />
-    <link rel="stylesheet" href="../css/theme.css">
+  <link rel="stylesheet" href="../css/theme.css">
   <link rel="stylesheet" href="../css/visually.css">
-    <link rel="stylesheet" href="../css/lang-switcher.css">
+  <link rel="stylesheet" href="../css/lang-switcher.css">
   <script src="../js/users/i18n.js" defer></script>
 </head>
 <body>
@@ -30,6 +30,9 @@
   <a href="about.html" data-i18n="about" id="noclick">About us</a>
   <a href="blog.html" class="active" data-i18n="blog" id="noclick">Blog</a>
   <a href="contact.html" class="btn" data-i18n="contact" id="noclick">Contact us</a>
+  <a href="#" id="logoutBtn" style="display:none;" data-i18n="logout">Logout</a>
+  <a href="login.html" class="btn register-btn" data-i18n="login">Login</a>
+  <a href="register.html" class="btn register-btn" data-i18n="register">Register</a>
 </nav>
   <button class="burger-btn" aria-label="Menu">
     <i class="fas fa-bars"></i>
@@ -47,38 +50,43 @@
   <a href="home.html" data-i18n="home">Home</a>
   <a href="properties.html" data-i18n="properties" id="noclick">Properties</a>
   <a href="about.html" data-i18n="about" id="noclick">About us</a>
-  <a href="blog.html" class="active" data-i18n="blog" id="noclick">Blog</a>
+  <a href="blog.html" data-i18n="blog" id="noclick">Blog</a>
   <a href="contact.html" class="btn" data-i18n="contact" id="noclick">Contact us</a>
+  <a href="#" id="logoutBtn" style="display:none;" data-i18n="logout">Logout</a>
+  <a href="login.html" class="btn register-btn" data-i18n="login">Login</a>
+  <a href="register.html" class="btn register-btn" data-i18n="register">Register</a>
 </nav>
 </div>
 <div class="overlay"></div>
 
   <div class="login-container">
     <div class="login-header">
-      <h1>Войти в аккаунт</h1>
-      <p>Нет аккаунта? <a href="register.html">Зарегистрироваться</a></p>
+      <h1 data-i18n="loginTitle">Войти в аккаунт</h1>
+      <p data-i18n="loginSubtitle">Нет аккаунта? <a href="register.html" data-i18n="signUp">Зарегистрироваться</a></p>
     </div>
 
     <form id="loginForm">
       <div class="form-group">
-        <label for="email">Email <span class="required">*</span></label>
+        <label for="email" data-i18n="email">Email <span class="required" data-i18n="requiredField">*</span></label>
         <input
           type="email"
           id="email"
           name="email"
           placeholder="example@mail.com"
+          data-i18n="emailPlaceholder"
           required
         />
         <div class="error-message" id="emailError"></div>
       </div>
 
       <div class="form-group">
-        <label for="password">Пароль <span class="required">*</span></label>
+        <label for="password" data-i18n="password">Пароль <span class="required" data-i18n="requiredField">*</span></label>
         <input
           type="password"
           id="password"
           name="password"
           placeholder="Введите пароль"
+          data-i18n="passwordPlaceholder"
           required
         />
         <div class="error-message" id="passwordError"></div>
@@ -87,11 +95,11 @@
       <div class="form-group remember-me">
         <label>
           <input type="checkbox" id="rememberMe" name="rememberMe" />
-          Запомнить меня
+          <span data-i18n="rememberMe">Запомнить меня</span>
         </label>
       </div>
 
-      <button type="submit" id="loginBtn" class="primary-btn" disabled>
+      <button type="submit" id="loginBtn" class="primary-btn" disabled data-i18n="loginBtn">
         Войти
       </button>
     </form>
@@ -187,7 +195,7 @@
   </footer>
   <script src="../js/burger-menu/burger-menu.js"></script>
   <script type="module" src="../js/login/login.js"></script>
-    <script src="../js/users/user.js"></script>
+  <script src="../js/users/user.js"></script>
   <script src="../js/users/theme-toggle.js"></script>
   <script src="../js/users/reset.js"></script>
   <script src="../js/users/visually.js"></script>

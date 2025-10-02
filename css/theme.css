@@ -23,7 +23,8 @@ body.dark-theme .property-controls,
 body.dark-theme .mission-description,
 body.dark-theme .team-controls,
 body.dark-theme .blog-controls,
-body.dark-theme .article-header{
+body.dark-theme .article-header,
+body.dark-theme .admin-btn{
   background: #2e2e2d;
   color: #fff;
 }
@@ -32,7 +33,11 @@ body.dark-theme .feature-card,
 body.dark-theme .value-card,
 body.dark-theme .team-member,
 body.dark-theme .agent-card,
-body.dark-theme .mobile-menu{
+body.dark-theme .mobile-menu,
+body.dark-theme .register-container,
+body.dark-theme .attempts-counter,
+body.dark-theme .login-container,
+body.dark-theme .modal-content{
   background: #f9f9f948;
   color: #fff;
 }
@@ -65,7 +70,8 @@ body.dark-theme .luxury-footer{
   color: #fff;
 }
 
-body.dark-theme .lang-switcher{
+body.dark-theme .lang-switcher,
+body.dark-theme .prefix{
   background-color: #fff;
   color: #2e2e2d;
 }
